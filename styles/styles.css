@@ -25,6 +25,7 @@ body {
 }
 
 #road-3 {
+    position: relative;
     width: 100%;
     height: 100px;
     background-color: gray;
@@ -33,6 +34,7 @@ body {
 }
 
 #road-2 {
+    position: relative;
     width: 100%;
     height: 100px;
     background-color: gray;
@@ -40,6 +42,7 @@ body {
 }
 
 #road-1 {
+    position: relative;
     width: 100%;
     height: 100px;
     background-color: gray;
@@ -47,6 +50,7 @@ body {
 }
 
 #road-0 {
+    position: relative;
     width: 100%;
     height: 100px;
     background-color: gray;
@@ -69,3 +73,13 @@ body {
     left: 370px;
     top: 5px;
 }
+
+.car{
+    position: absolute;
+    width: 250px;
+    height: 90px;
+    background-color: #f0f02d;
+    top: 3px;
+    border: 1px black solid;
+}
+
