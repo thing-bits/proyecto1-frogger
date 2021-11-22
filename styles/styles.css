@@ -1,6 +1,5 @@
 body {
-    margin: 0px auto;
-    
+    margin: 0px auto;   
 }
 
 #game-board {
@@ -10,6 +9,7 @@ body {
     height: 800px;
     background-color: black;
 }
+
 #game-zone {
     position: absolute;
     margin: 100px;
@@ -54,7 +54,18 @@ body {
 }
 
 #start {
+    position: relative;
     width: 100%;
     height: 100px;
     background-color: forestgreen;
+}
+
+#frog {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    display: block;
+    background-color: #013801;
+    left: 370px;
+    top: 5px;
 }
