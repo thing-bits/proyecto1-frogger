@@ -1,0 +1,20 @@
+body {
+    margin: 0px auto;
+    
+}
+
+#game-board {
+    position: relative;
+    margin: 0px auto;
+    width: 1000px;
+    height: 800px;
+    background-color: black;
+}
+#game-zone {
+    position: absolute;
+    margin: 100px;
+    width: 800px;
+    height: 600px;
+    background-color: blanchedalmond;
+}
+
