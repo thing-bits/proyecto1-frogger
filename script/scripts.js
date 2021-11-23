@@ -27,25 +27,24 @@ const frog = {
 
 const car_0 = {
   html: document.querySelector(".car-0"),
+  speed: 10,
 };
 const car_1 = {
   html: document.querySelector(".car-1"),
+  speed: 7,
 };
 const car_2 = {
   html: document.querySelector(".car-2"),
+  speed: 5,
 };
 const car_3 = {
   html: document.querySelector(".car-3"),
+  speed: 2,
 };
 
-//const car = document.querySelector(".car");
 
-let speed = 10;
-let speed_1 = 7;
-let speed_2 = 5;
-let speed_3 = 3
 let left = -250;
-let right = 0;
+let right = -250;
 
 function moveVehicleEven() {
   left += 1;
@@ -54,14 +53,19 @@ function moveVehicleEven() {
 }
 
 function moveVehicleOdd() {
-    left -= 1;
-    
+    right += 1;
+    car_1.html.style.right = `${right}px`;
+    car_3.html.style.right = `${right}px`;
+    if (right === 1000) {
+        console.log('alo')
+    }
 }
 
-const timerIdEven = setInterval(moveVehicleEven, speed);
-const timerIdOdd = setInterval(moveVehicleOdd, speed);
+const timerIdEven = setInterval(moveVehicleEven, car_2.speed);
+const timerIdOdd = setInterval(moveVehicleOdd, car_3.speed);
 
-setTimeout(clearInterval, 10800, timerIdEven, timerIdOdd);
+setTimeout(clearInterval, 6000, timerIdEven);
+setTimeout(clearInterval, 5000, timerIdOdd);
 
 window.addEventListener("keydown", function (event) {
   if (event.code === "ArrowUp") {
