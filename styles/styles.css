@@ -16,6 +16,7 @@ body {
     width: 800px;
     height: 600px;
     background-color: blanchedalmond;
+    overflow: hidden;
 }
 
 #goal {
