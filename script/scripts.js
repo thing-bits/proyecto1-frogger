@@ -1,13 +1,18 @@
+const car = new Vehicle(5, 90);
+const frog = new Frog();
+const mov = new Move();
+
 function playFrogger() {
-  const car = new Vehicle(5, 90);
-  const frog = new Frog();
-  const mov = new Move();
   car.drawVehicle();
-  car.move();
 }
 
+function startGame() {
+  car.move();
+  // frog.move()
+}
+
+// function buttonStartGame() {
+timerId = setInterval(startGame, 1);
+// }
+
 playFrogger();
-
-// car = x-height:60 * y-width:car.size
-
-// frog = x-height:50 * y-width:50
