@@ -23,4 +23,4 @@ function Frog() {
     this.pos.left += 105;
     this.frog.style.left = `${this.pos.left}px`;
   };
-}
+};
