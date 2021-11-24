@@ -1,47 +1,132 @@
-
-// Función para crear la rana
 function Frog() {
+  let self = this;
+  this.collisionDetectedUp = false;
+  this.collisionDetectedDown = false;
+  this.collisionDetectedRight = false;
+  this.collisionDetectedLeft = false;
   this.frog = document.querySelector("#frog");
   this.pos = {
     left: 370,
     top: 5,
   };
-
-  // se establece los movimientos de la rana al pulsar las teclas
+  this.direction = null;
   this.moveUp = function () {
     this.pos.top -= 105;
     this.frog.style.top = `${this.pos.top}px`;
   };
+
   this.moveDown = function () {
     this.pos.top += 105;
     this.frog.style.top = `${this.pos.top}px`;
   };
+
   this.moveLeft = function () {
     this.pos.left -= 105;
     this.frog.style.left = `${this.pos.left}px`;
   };
+
   this.moveRight = function () {
     this.pos.left += 105;
     this.frog.style.left = `${this.pos.left}px`;
   };
 
-  // Registras las pulsaciones de las teclas y hace mover la rana acorda a ellas
   window.addEventListener("keydown", function (event) {
     if (event.code === "ArrowUp") {
-      frog.moveUp();
-      console.log(frog.pos.top);
+      this.direction = "up";
+      if (!isCollapsed(this.direction)) {
+        if (this.collisionDetectedUp === false) {
+          self.moveUp();
+        }
+      }
     }
+
     if (event.code === "ArrowDown") {
-      frog.moveDown();
-      console.log(frog.pos.top);
+      this.direction = "down";
+      if (!isCollapsed(this.direction)) {
+        if (this.collisionDetectedDown === false) {
+          self.moveDown();
+        }
+      }
     }
+
     if (event.code === "ArrowLeft") {
-      frog.moveLeft();
-      console.log(frog.pos.left);
+      this.direction = "left";
+      if (!isCollapsed(this.direction)) {
+        if (this.collisionDetectedLeft === false) {
+          self.moveLeft();
+        }
+      }
     }
+
     if (event.code === "ArrowRight") {
-      frog.moveRight();
-      console.log(frog.pos.left);
+      this.direction = "right";
+      if (!isCollapsed(this.direction)) {
+        if (this.collisionDetectedRight === false) {
+          self.moveRight();
+        }
+      }
     }
   });
+
+  function isCollapsed(direction) {
+    // check for collapsed function
+    var rana = document.querySelector("#frog");
+    var coche = document.querySelector(".car");
+    var object_1 = rana.getBoundingClientRect();
+    var object_2 = coche.getBoundingClientRect();
+    if (direction === "up") {
+      if (
+        object_1.left < object_2.left + object_2.width &&
+        object_1.left + object_1.width > object_2.left &&
+        object_1.top - 105 < object_2.top + object_2.height &&
+        object_1.top - 105 + object_1.height > object_2.top
+      ) {
+        this.collisionDetectedUp = true;
+        alert("perdiste!");
+        //Cambia fotograma a muerta
+        //Elimina la rana al chocar
+      } else {
+        this.collisionDetectedUp = false;
+      }
+    }
+    if (direction === "down") {
+      if (
+        object_1.left < object_2.left + object_2.width &&
+        object_1.left + object_1.width > object_2.left &&
+        object_1.top + 105 < object_2.top + object_2.height &&
+        object_1.top + 105 + object_1.height > object_2.top
+      ) {
+        this.collisionDetectedDown = true;
+        alert("perdiste!");
+      } else {
+        this.collisionDetectedDown = false;
+      }
+    }
+    if (direction === "left") {
+      if (
+        object_1.left - 105 < object_2.left + object_2.width &&
+        object_1.left - 105 + object_1.width > object_2.left &&
+        object_1.top < object_2.top + object_2.height &&
+        object_1.top + object_1.height > object_2.top
+      ) {
+        this.collisionDetectedLeft = true;
+        alert("perdiste!");
+      } else {
+        this.collisionDetectedLeft = false;
+      }
+    }
+    if (direction === "right") {
+      if (
+        object_1.left + 105 < object_2.left + object_2.width &&
+        object_1.left + 105 + object_1.width > object_2.left &&
+        object_1.top < object_2.top + object_2.height &&
+        object_1.top + object_1.height > object_2.top
+      ) {
+        this.collisionDetectedRight = true;
+        alert("perdiste!");
+      } else {
+        this.collisionDetectedRight = false;
+      }
+    }
+  }
 }
