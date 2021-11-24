@@ -75,6 +75,10 @@ body {
   top: 5px;
 }
 
+#frog.dead {
+  background-color: red;
+} 
+
 .car {
   position: absolute;
   width: 250px;

@@ -70,20 +70,21 @@ function Frog() {
 
   function isCollapsed(direction) {
     // check for collapsed function
-    var rana = document.querySelector("#frog");
+    //var rana = document.querySelector("#frog"); // modificado por self.frog 2 lineas abajo
     var coche = document.querySelector(".car");
-    var object_1 = rana.getBoundingClientRect();
-    var object_2 = coche.getBoundingClientRect();
+    var frogDimension = self.frog.getBoundingClientRect();
+    var carDimension = coche.getBoundingClientRect();
     if (direction === "up") {
       if (
-        object_1.left < object_2.left + object_2.width &&
-        object_1.left + object_1.width > object_2.left &&
-        object_1.top - 105 < object_2.top + object_2.height &&
-        object_1.top - 105 + object_1.height > object_2.top
+        frogDimension.left < carDimension.left + carDimension.width &&
+        frogDimension.left + frogDimension.width > carDimension.left &&
+        frogDimension.top - 105 < carDimension.top + carDimension.height &&
+        frogDimension.top - 105 + frogDimension.height > carDimension.top
       ) {
         this.collisionDetectedUp = true;
-        alert("perdiste!");
+        //alert("perdiste!");
         //Cambia fotograma a muerta
+        self.frog.classList.add("dead");
         //Elimina la rana al chocar
       } else {
         this.collisionDetectedUp = false;
@@ -91,39 +92,45 @@ function Frog() {
     }
     if (direction === "down") {
       if (
-        object_1.left < object_2.left + object_2.width &&
-        object_1.left + object_1.width > object_2.left &&
-        object_1.top + 105 < object_2.top + object_2.height &&
-        object_1.top + 105 + object_1.height > object_2.top
+        frogDimension.left < carDimension.left + carDimension.width &&
+        frogDimension.left + frogDimension.width > carDimension.left &&
+        frogDimension.top + 105 < carDimension.top + carDimension.height &&
+        frogDimension.top + 105 + frogDimension.height > carDimension.top
       ) {
         this.collisionDetectedDown = true;
-        alert("perdiste!");
+        //alert("perdiste!");
+        //Cambia fotograma a muerta
+        self.frog.classList.add("dead");
       } else {
         this.collisionDetectedDown = false;
       }
     }
     if (direction === "left") {
       if (
-        object_1.left - 105 < object_2.left + object_2.width &&
-        object_1.left - 105 + object_1.width > object_2.left &&
-        object_1.top < object_2.top + object_2.height &&
-        object_1.top + object_1.height > object_2.top
+        frogDimension.left - 105 < carDimension.left + carDimension.width &&
+        frogDimension.left - 105 + frogDimension.width > carDimension.left &&
+        frogDimension.top < carDimension.top + carDimension.height &&
+        frogDimension.top + frogDimension.height > carDimension.top
       ) {
         this.collisionDetectedLeft = true;
-        alert("perdiste!");
+        //alert("perdiste!");
+        //Cambia fotograma a muerta
+        self.frog.classList.add("dead");
       } else {
         this.collisionDetectedLeft = false;
       }
     }
     if (direction === "right") {
       if (
-        object_1.left + 105 < object_2.left + object_2.width &&
-        object_1.left + 105 + object_1.width > object_2.left &&
-        object_1.top < object_2.top + object_2.height &&
-        object_1.top + object_1.height > object_2.top
+        frogDimension.left + 105 < carDimension.left + carDimension.width &&
+        frogDimension.left + 105 + frogDimension.width > carDimension.left &&
+        frogDimension.top < carDimension.top + carDimension.height &&
+        frogDimension.top + frogDimension.height > carDimension.top
       ) {
         this.collisionDetectedRight = true;
-        alert("perdiste!");
+        //alert("perdiste!");
+        //Cambia fotograma a muerta
+        self.frog.classList.add("dead");
       } else {
         this.collisionDetectedRight = false;
       }
