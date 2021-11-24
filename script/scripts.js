@@ -9,7 +9,11 @@ function startGame() {
 
   // Se llama a la función para mover el vehículo
   car.move();
+
 }
 
 // Se iniica el juego
 startGame();
+
+timerId = setInterval (startGame, 100)
+

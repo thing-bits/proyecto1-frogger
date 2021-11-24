@@ -9,16 +9,11 @@ function Vehicle(speed) {
     top: 3,
   };
 
-  this.timerId = function () {
-    const timerId = setInterval(this.move.bind(this), this.speed);
-    if (this.pos.left >= 700) {
-      clearInterval(timerId);
-    }
-  }
-
-  this.move = function () {
-    this.pos.left += 10;
-    this.car.style.left = this.pos.left + "px";
-  };
-  this.timerId()
+  
+this.move = function () {
+  this.pos.left += 10;
+  this.car.style.left = this.pos.left + "px";
 };
+};
+
+
