@@ -12,7 +12,7 @@ function startGame() {
 }
 
 // function buttonStartGame() {
-timerId = setInterval(startGame, 1);
+timerId = setInterval(startGame, 10);
 // }
 
 playFrogger();
