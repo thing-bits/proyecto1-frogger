@@ -1,23 +1,24 @@
-function Vehicle() {
-    this.road = document.querySelector('#road-0')
-    this.html = document.querySelector('.car')
-    this.pos = {
-        left: 0,
-        top: 3,
+
+// Función para crear el vehículo con velocidad personalizada
+function Vehicle(speed) {
+  this.road = document.querySelector("#road-0");
+  this.car = document.querySelector(".car");
+  this.speed = speed;
+  this.pos = {
+    left: -250,
+    top: 3,
+  };
+
+  this.timerId = function () {
+    const timerId = setInterval(this.move.bind(this), this.speed);
+    if (this.pos.left >= 700) {
+      clearInterval(timerId);
     }
-    this.move = function () {
-        let id = null;
-        let pos = -300;
-        clearInterval(id);
-        id = setInterval(frame, 20);
-        function frame() {
-            if (pos >= 800) {
-                clearInterval(id);
-                car.road.removeChild(car.html);
-            } else {
-                pos += 3;
-                car.html.style.left = pos + 'px';
-            }
-        }
-    }
-}
+  }
+
+  this.move = function () {
+    this.pos.left += 10;
+    this.car.style.left = this.pos.left + "px";
+  };
+  this.timerId()
+};

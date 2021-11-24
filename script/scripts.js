@@ -1,25 +1,15 @@
-const frog = new Frog ()
+// se crea una rana
+const frog = new Frog();
 
-const car = new Vehicle ()
+// se crea un vehículo
+const car = new Vehicle(50);
 
-car.move()
+// Se crea la función del juego
+function startGame() {
 
-window.addEventListener('keydown', function (event) {
-    if (event.code === 'ArrowUp') {
-        frog.moveUp()
-    }
+  // Se llama a la función para mover el vehículo
+  car.move();
+}
 
-    if (event.code === 'ArrowDown') {
-        frog.moveDown()
-
-    }
-
-    if (event.code === 'ArrowLeft') {
-        frog.moveLeft()
-    }
-
-    if (event.code === 'ArrowRight') {
-        frog.moveRight()
-    }
-})
-
+// Se iniica el juego
+startGame();
