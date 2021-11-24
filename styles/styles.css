@@ -1,87 +1,86 @@
 body {
-    margin: 0px auto;   
+  margin: 0px auto;
 }
 
 #game-board {
-    position: relative;
-    margin: 0px auto;
-    width: 1000px;
-    height: 800px;
-    background-color: black;
+  position: relative;
+  margin: 0px auto;
+  width: 1000px;
+  height: 800px;
+  background-color: black;
 }
 
 #game-zone {
-    position: absolute;
-    margin: 100px;
-    width: 800px;
-    height: 600px;
-    background-color: blanchedalmond;
-    overflow: hidden;
+  position: absolute;
+  margin: 100px;
+  width: 800px;
+  height: 600px;
+  background-color: blanchedalmond;
+  overflow: hidden;
 }
 
 #goal {
-    width: 100%;
-    height: 100px;
-    background-color: forestgreen;
+  width: 100%;
+  height: 100px;
+  background-color: forestgreen;
 }
 
 #road-3 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white dashed;
-    border-top: 4px white solid;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white dashed;
+  border-top: 4px white solid;
 }
 
 #road-2 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white dashed;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white dashed;
 }
 
 #road-1 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white dashed;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white dashed;
 }
 
 #road-0 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white solid;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white solid;
 }
 
 #start {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: forestgreen;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: forestgreen;
 }
 
 #frog {
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    display: block;
-    background-color: #013801;
-    left: 370px;
-    top: 5px;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  display: block;
+  background-color: #013801;
+  left: 370px;
+  top: 5px;
 }
 
-.car{
-    position: absolute;
-    width: 250px;
-    height: 90px;
-    background-color: #f0f02d;
-    left: 0px;
-    top: 3px;
-    border: 1px black solid;
+.car {
+  position: absolute;
+  width: 250px;
+  height: 90px;
+  background-color: #f0f02d;
+  left: 0px;
+  top: 3px;
+  /* border: 1px black solid; */
 }
-
