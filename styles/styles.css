@@ -1,109 +1,109 @@
 body {
-    margin: 0px auto;   
+  margin: 0px auto;
 }
 
 #game-board {
-    position: relative;
-    margin: 0px auto;
-    width: 1000px;
-    height: 800px;
-    background-color: black;
+  position: relative;
+  margin: 0px auto;
+  width: 1000px;
+  height: 800px;
+  background-color: black;
 }
 
 #game-zone {
-    position: absolute;
-    margin: 100px;
-    width: 800px;
-    height: 600px;
-    background-color: blanchedalmond;
+  position: absolute;
+  margin: 100px;
+  width: 800px;
+  height: 600px;
+  background-color: blanchedalmond;
+  overflow: hidden;
 }
 
 #goal {
-    width: 100%;
-    height: 100px;
-    background-color: forestgreen;
+  width: 100%;
+  height: 100px;
+  background-color: forestgreen;
 }
 
 #road-3 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white dashed;
-    border-top: 4px white solid;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white dashed;
+  border-top: 4px white solid;
 }
 
 #road-2 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white dashed;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white dashed;
 }
 
 #road-1 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white dashed;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white dashed;
 }
 
 #road-0 {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: gray;
-    border-bottom: 4px white solid;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+  border-bottom: 4px white solid;
 }
 
 #start {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: forestgreen;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: forestgreen;
 }
-
+/* frog */
 #frog {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: #013801;
-    left: 370px;
-    top: 25px;
+  position: absolute;
+  width: 50px; /* rigth side x + width */
+  height: 50px; /* left side y + height */
+  background-color: #013801;
+  left: 350px;
+  top: 25px;
 }
-
-.car-0{
-    position: absolute;
-    width: 180px;
-    height: 60px;
-    background-color: #f0f02d;
-    left: 0px;
-    right: 0px;
-    top: 20px;
+/* car */
+.car-0 {
+  position: absolute;
+  height: 60px;
+  background-color: #f0f02d;
+  left: -300px;
+  right: 0px;
+  top: 20px;
 }
-.car-1{
-    position: absolute;
-    width: 180px;
-    height: 60px;
-    background-color: #a82df0;
-    right: 0px;
-    top: 20px;
+.car-1 {
+  position: absolute;
+  width: 180px;
+  height: 60px;
+  background-color: #a82df0;
+  right: 0px;
+  top: 20px;
 }
-.car-2{
-    position: absolute;
-    width: 140px;
-    height: 60px;
-    background-color: #2d67f0;
-    left: 0px;
-    right: 0px;
-    top: 20px;
+.car-2 {
+  position: absolute;
+  width: 140px;
+  height: 60px;
+  background-color: #2d67f0;
+  left: 0px;
+  right: 0px;
+  top: 20px;
 }
-.car-3{
-    position: absolute;
-    width: 180px;
-    height: 60px;
-    background-color: #f04a2d;
-    right: 0px;
-    top: 20px;
+.car-3 {
+  position: absolute;
+  width: 180px;
+  height: 60px;
+  background-color: #f04a2d;
+  right: 0px;
+  top: 20px;
 }
