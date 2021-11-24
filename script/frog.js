@@ -4,7 +4,11 @@ function Frog() {
   this.collisionDetectedDown = false;
   this.collisionDetectedRight = false;
   this.collisionDetectedLeft = false;
-  this.frog = document.querySelector("#frog");
+  this.start = document.querySelector('#start')
+  this.frog = document.createElement('div')
+  this.frog.setAttribute('id', 'frog')
+  this.start.appendChild(this.frog)
+  //this.frog = document.querySelector("#frog");
   this.pos = {
     left: 370,
     top: 5,
@@ -74,23 +78,23 @@ function Frog() {
     var coche = document.querySelector(".car");
     var frogDimension = self.frog.getBoundingClientRect();
     var carDimension = coche.getBoundingClientRect();
-    if (direction === "up") {
+
       if (
         frogDimension.left < carDimension.left + carDimension.width &&
         frogDimension.left + frogDimension.width > carDimension.left &&
-        frogDimension.top - 105 < carDimension.top + carDimension.height &&
-        frogDimension.top - 105 + frogDimension.height > carDimension.top
+        frogDimension.top < carDimension.top + carDimension.height &&
+        frogDimension.top + frogDimension.height > carDimension.top
       ) {
         this.collisionDetectedUp = true;
-        //alert("perdiste!");
-        //Cambia fotograma a muerta
-        self.frog.classList.add("dead");
-        //Elimina la rana al chocar
+        console.log('choca', this.collisionDetectedUp)
+     
       } else {
         this.collisionDetectedUp = false;
       }
-    }
-    if (direction === "down") {
+  }
+}
+    // en memoria de Juan Pablo
+    /* if (direction === "down") {
       if (
         frogDimension.left < carDimension.left + carDimension.width &&
         frogDimension.left + frogDimension.width > carDimension.left &&
@@ -137,3 +141,5 @@ function Frog() {
     }
   }
 }
+ 
+*/

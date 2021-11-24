@@ -7,13 +7,18 @@ const car = new Vehicle(50);
 // Se crea la función del juego
 function startGame() {
 
-  // Se llama a la función para mover el vehículo
-  car.move();
+  timerId = setInterval(function () {
+    // Se llama a la función para mover el vehículo
+    car.move();
+
+  }, 100)
 
 }
 
 // Se iniica el juego
 startGame();
 
-timerId = setInterval (startGame, 100)
 
+/*this.collapse = function()
+Poner z-index para sobreponer el coche a la rana
+frog.isCollaps() */
