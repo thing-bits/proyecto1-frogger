@@ -90,7 +90,8 @@ body {
   display: block;
   background-color: #013801;
   left: 290px;
-  top: 5px;
+  top: 5px; 
+  z-index: 0;
 }
 
 #frog.dead {
@@ -99,10 +100,15 @@ body {
 
 .car {
   position: absolute;
-  width: 150px;
+  width: 50px;
   height: 30px;
   left: 0px;
   bottom: 4px;
+  background-image: url(../assets/white-car-go-right.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+  /* box-shadow: 10px; */
 }
 
 img {

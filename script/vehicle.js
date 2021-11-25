@@ -1,16 +1,18 @@
-
 // Función para crear el vehículo con velocidad personalizada
-function Vehicle(speed) {
-  this.road = document.querySelector("#road-0");
-  this.car = document.querySelector(".car");
-  this.speed = speed;
+function Vehicle(pos = -150) {
   this.pos = {
-    left: -150,
+    left: pos,
     top: 3,
   };
+  this.road0 = document.querySelector("#road-0");
+  this.car = document.createElement("div");
+  this.car.setAttribute("class", "car");
+  this.car.style.left = this.pos.left + "px";
+  this.road0.appendChild(this.car);
+  // this.speed = speed;
 
   this.move = function () {
-    this.pos.left += 10;
+    this.pos.left += 9;
     this.car.style.left = this.pos.left + "px";
   };
-};
+}
