@@ -1,77 +1,95 @@
 body {
   margin: 0px auto;
-}
+  background: #7db9e8;
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #7db9e8 0%,
+    #21374b 100%
+  );
+  background: webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #7db9e8 0%,
+    #21374b 100%
+  );
+    background: radial-gradient(
+    ellipse at center, #7db9e8 0%, #21374b 100%
+    );
+    background-size: cover;
+  }
 
 #game-board {
   position: relative;
-  margin: 0px auto;
-  width: 1000px;
-  height: 800px;
-  background-color: black;
+  margin: 10px auto;
+  width: 800px;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.226);
 }
 
 #game-zone {
   position: absolute;
-  margin: 100px;
-  width: 800px;
-  height: 600px;
-  background-color: blanchedalmond;
+  margin: 70px 100px;
+  width: 600px;
+  height: 460px;
+  background-color: blanchedalmond; /* se deja por ahora por si se ve ese color algo no va */
   overflow: hidden;
 }
 
 #goal {
   width: 100%;
-  height: 100px;
-  background-color: forestgreen;
+  height: 40px;
+  background-image:url(../assets/grass.jpg);
+  background-repeat: repeat-x;
+  background-size: auto 40px;
+  border-bottom: 2px white solid;
 }
 
-#road-3 {
+.road {
   position: relative;
   width: 100%;
-  height: 100px;
+  height: 40px;
   background-color: gray;
-  border-bottom: 4px white dashed;
-  border-top: 4px white solid;
+  border-bottom: 2px white dashed;
 }
 
-#road-2 {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  background-color: gray;
-  border-bottom: 4px white dashed;
-}
-
-#road-1 {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  background-color: gray;
-  border-bottom: 4px white dashed;
+#road-4 {
+  border-bottom: unset;
 }
 
 #road-0 {
+  border-bottom: unset;
+}
+
+#rest-zone {
   position: relative;
   width: 100%;
-  height: 100px;
-  background-color: gray;
-  border-bottom: 4px white solid;
+  height: 40px;
+  background-image:url(../assets/grass.jpg);
+  background-repeat: repeat-x;
+  background-size: auto 40px;
+  border-bottom: 2px white solid;
+  border-top: 2px white solid;
+
 }
 
 #start {
   position: relative;
   width: 100%;
-  height: 100px;
-  background-color: forestgreen;
+  height: 40px;
+  background-image:url(../assets/grass.jpg);
+  background-repeat: repeat-x;
+  background-size: auto 40px;
+  border-top: 2px white solid;
 }
 
 #frog {
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: 20px;
+  height: 30px;
   display: block;
   background-color: #013801;
-  left: 370px;
+  left: 290px;
   top: 5px;
 }
 
@@ -81,10 +99,13 @@ body {
 
 .car {
   position: absolute;
-  width: 250px;
-  height: 90px;
-  background-color: #f0f02d;
+  width: 150px;
+  height: 30px;
   left: 0px;
-  top: 3px;
-  /* border: 1px black solid; */
+  bottom: 4px;
+}
+
+img {
+  max-width: 100%;
+ max-height: 100%;
 }

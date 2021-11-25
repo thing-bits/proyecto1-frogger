@@ -5,15 +5,12 @@ function Vehicle(speed) {
   this.car = document.querySelector(".car");
   this.speed = speed;
   this.pos = {
-    left: -250,
+    left: -150,
     top: 3,
   };
 
-  
-this.move = function () {
-  this.pos.left += 10;
-  this.car.style.left = this.pos.left + "px";
+  this.move = function () {
+    this.pos.left += 10;
+    this.car.style.left = this.pos.left + "px";
+  };
 };
-};
-
-
