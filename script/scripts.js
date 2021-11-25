@@ -1,6 +1,6 @@
 const car = new Vehicle(1, 150);
 const frog = new Frog();
-const mov = new Move();
+// const mov = new Move();
 
 function startGame() {
   timerId = setInterval(function () {

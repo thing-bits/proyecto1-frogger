@@ -1,5 +1,4 @@
 function Vehicle(speed, size) {
-  let self = this;
   this.road0 = document.querySelector("#road-0");
   this.vehicle = document.createElement("div");
   this.vehicle.setAttribute("class", "car-0");
@@ -15,8 +14,8 @@ function Vehicle(speed, size) {
     this.vehicle.style.width = this.size + "px";
   };
 
-  // this.move = function () {
-  //   self.pos.left += 1;
-  //   self.vehicle.style.left = `${self.pos.left}px`;
-  // };
+  this.move = function () {
+    this.pos.left += 1;
+    this.vehicle.style.left = `${this.pos.left}px`;
+  };
 }

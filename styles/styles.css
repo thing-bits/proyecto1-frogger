@@ -131,8 +131,12 @@ body {
   position: absolute;
   height: 60px;
   background-color: #f0f02d;
+  background: transparent;
+  background-image: url(../assets/pink_car.png);
+  background-size: 150px 60px;
   left: -300px;
   right: 0px;
   top: 20px;
   z-index: 1;
+
 }
