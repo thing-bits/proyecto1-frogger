@@ -1,18 +1,33 @@
 body {
   margin: 0px auto;
+  background: #7db9e8;
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #7db9e8 0%,
+    #21374b 100%
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #7db9e8 0%,
+    #21374b 100%
+  );
+  background: radial-gradient(ellipse at center, #7db9e8 0%, #21374b 100%);
+  background-size: cover;
 }
 
 #game-board {
   position: relative;
-  margin: 0px auto;
-  width: 1000px;
-  height: 800px;
-  background-color: black;
+  margin: 200px auto;
+  width: 1200px;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.226);
 }
 
 #game-zone {
   position: absolute;
-  margin: 100px;
+  margin: 0px 200px 0px 200px;
   width: 800px;
   height: 600px;
   background-color: blanchedalmond;
@@ -22,7 +37,10 @@ body {
 #goal {
   width: 100%;
   height: 100px;
-  background-color: forestgreen;
+  background-image: url(../assets/grass_pattern.png);
+  background-size: 250px;
+  opacity: 0.7;
+  background-repeat: repeat;
 }
 
 #road-3 {
@@ -62,17 +80,52 @@ body {
   position: relative;
   width: 100%;
   height: 100px;
-  background-color: forestgreen;
+  background-image: url(../assets/pattern_goal.jpeg);
+  background-size: 100px;
+  opacity: 0.7;
 }
 /* frog */
 #frog {
   position: absolute;
-  width: 50px; /* rigth side x + width */
-  height: 50px; /* left side y + height */
+  width: 20px; /* rigth side x + width */
+  height: 20px; /* left side y + height */
   background-color: #013801;
-  left: 350px;
-  top: 25px;
+  border-radius: 7px;
+  left: 390px;
+  top: 50px;
+  animation: pop 1.2s infinite;
 }
+@keyframes pop {
+  0% {
+    transform: translate(-50%, -50%) scale(1.25, 0.75);
+  }
+  50% {
+    transform: translate(-50%, -150%) scale(1, 1);
+  }
+  55% {
+    transform: translate(-50%, -150%) rotate(15deg);
+  }
+  60% {
+    transform: translate(-50%, -150%) rotate(-15deg);
+  }
+  65% {
+    transform: translate(-50%, -150%) rotate(15deg);
+  }
+  70% {
+    transform: translate(-50%, -150%) rotate(-15deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.25, 0.75);
+  }
+}
+
+#frog.dead {
+  background-color: rgb(233, 18, 18);
+  border-radius: 7px;
+  z-index: 0;
+  animation-play-state: paused;
+}
+
 /* car */
 .car-0 {
   position: absolute;
@@ -81,29 +134,5 @@ body {
   left: -300px;
   right: 0px;
   top: 20px;
-}
-.car-1 {
-  position: absolute;
-  width: 180px;
-  height: 60px;
-  background-color: #a82df0;
-  right: 0px;
-  top: 20px;
-}
-.car-2 {
-  position: absolute;
-  width: 140px;
-  height: 60px;
-  background-color: #2d67f0;
-  left: 0px;
-  right: 0px;
-  top: 20px;
-}
-.car-3 {
-  position: absolute;
-  width: 180px;
-  height: 60px;
-  background-color: #f04a2d;
-  right: 0px;
-  top: 20px;
+  z-index: 1;
 }

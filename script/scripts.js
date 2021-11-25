@@ -1,18 +1,11 @@
-const car = new Vehicle(5, 90);
+const car = new Vehicle(1, 150);
 const frog = new Frog();
 const mov = new Move();
 
-function playFrogger() {
-  car.drawVehicle();
-}
-
 function startGame() {
-  car.move();
-  // frog.move()
+  timerId = setInterval(function () {
+    car.move();
+    car.drawVehicle();
+  }, 1);
 }
-
-// function buttonStartGame() {
-timerId = setInterval(startGame, 1);
-// }
-
-playFrogger();
+startGame();

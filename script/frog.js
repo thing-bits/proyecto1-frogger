@@ -1,31 +1,35 @@
 function Frog() {
   let self = this;
-  this.html = document.querySelector("#frog");
+  this.start = document.querySelector("#start");
+  this.frog = document.createElement("div");
+  this.frog.setAttribute("id", "frog");
+  this.start.appendChild(this.frog);
   this.pos = {
-    left: 370,
-    top: 25,
+    left: 390,
+    top: 50,
   };
+
   this.moveUp = function () {
     this.pos.top -= 105;
-    this.html.style.top = `${this.pos.top}px`;
+    this.frog.style.top = `${this.pos.top}px`;
     isCollapsed(); // check for collapsed
   };
 
   this.moveDown = function () {
     this.pos.top += 105;
-    this.html.style.top = `${this.pos.top}px`;
+    this.frog.style.top = `${this.pos.top}px`;
     isCollapsed(); // check for collapsed
   };
 
   this.moveLeft = function () {
     this.pos.left -= 105;
-    this.html.style.left = `${this.pos.left}px`;
+    this.frog.style.left = `${this.pos.left}px`;
     isCollapsed(); // check for collapsed
   };
 
   this.moveRight = function () {
     this.pos.left += 105;
-    this.html.style.left = `${this.pos.left}px`;
+    this.frog.style.left = `${this.pos.left}px`;
     isCollapsed(); // check for collapsed
   };
 
@@ -47,22 +51,23 @@ function Frog() {
     }
   });
 
-  function isCollapsed(rana, coche) {
+  function isCollapsed() {
     // check for collapsed function
-    var rana = document.querySelector("#frog");
-    var coche = document.querySelector(".car-0");
-    var object_1 = rana.getBoundingClientRect();
-    var object_2 = coche.getBoundingClientRect();
+    var vehicle = document.querySelector(".car-0");
+    var frogDimension = self.frog.getBoundingClientRect();
+    var vehicleDimension = vehicle.getBoundingClientRect();
 
     if (
-      object_1.left < object_2.left + object_2.width &&
-      object_1.left + object_1.width > object_2.left &&
-      object_1.top < object_2.top + object_2.height &&
-      object_1.top + object_1.height > object_2.top
+      frogDimension.left < vehicleDimension.left + vehicleDimension.width &&
+      frogDimension.left + frogDimension.width > vehicleDimension.left &&
+      frogDimension.top < vehicleDimension.top + vehicleDimension.height &&
+      frogDimension.top + frogDimension.height > vehicleDimension.top
     ) {
-      console.log("MUERTA LA RANA");
+      // console.log("MUERTA LA RANA");
+      //Cambia fotograma a muerta
+      self.frog.classList.add("dead");
     } else {
-      console.log("not collapsed");
+      // console.log("not collapsed");
     }
   }
 }
