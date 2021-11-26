@@ -1,6 +1,7 @@
 function Frog() {
   let self = this;
   this.squashed = false;
+  this.nestReached = false;
   this.start = document.querySelector("#start");
   this.frog = document.createElement("div");
   this.frog.setAttribute("id", "frog");

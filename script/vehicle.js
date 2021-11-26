@@ -1,5 +1,5 @@
 // Función para crear el vehículo con velocidad personalizada
-function Vehicle(pos = -150) {
+function Vehicle(pos = -100) {
   this.pos = {
     left: pos,
     top: 3,
@@ -12,7 +12,7 @@ function Vehicle(pos = -150) {
   // this.speed = speed;
 
   this.move = function () {
-    this.pos.left += 9;
+    this.pos.left += 1;
     this.car.style.left = this.pos.left + "px";
   };
 }
