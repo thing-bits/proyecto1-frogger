@@ -104,34 +104,113 @@ body {
   background-color: red;
 }
 
-.car {
-  position: absolute;
-  width: 50px;
-  height: 30px;
-  /* left: 0px;
-  bottom: 4px;
-  background-image: url(../assets/white-car-go-right.png); */
-  background-size: 50px 30px;
-  background-repeat: no-repeat;
-  z-index: 1;
-
-  -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
-}
-
-.car2 {
+.vehicle {
   position: absolute;
   width: 50px;
   height: 30px;
   left: 0px;
   bottom: 4px;
-  background-image: url(../assets/white-car-go-right.png);
   background-size: 50px 30px;
   background-repeat: no-repeat;
   z-index: 1;
-
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
   filter: drop-shadow(-3px 5px 7px #222222);
+}
+
+.white-car-go-right {
+  background-image: url(../assets/white-car-go-right.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.white-car-go-left {
+  background-image: url(../assets/white-car-go-left.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.sport-car-go-right {
+  background-image: url(../assets/sport-car-go-right.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.sport-car-go-left {
+  background-image: url(../assets/sport-car-go-left.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.orange-car-go-right {
+  background-image: url(../assets/orange-car-go-right.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.orange-car-go-left {
+  background-image: url(../assets/orange-car-go-left.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.blue-car-go-right {
+  background-image: url(../assets/blue-car-go-right.png);
+  background-size: 50px 30px;
+  background-repeat: no-repeat;
+}
+
+.blue-car-go-left {
+  background-image: url(../assets/blue-car-go-left.png);
+  background-size: 50px 30px;
+  background-repeat: no-repeat;
+}
+
+.green-car-go-right {
+  background-image: url(../assets/green-car-go-right.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.green-car-go-left {
+  background-image: url(../assets/green-car-go-left.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.red-car-go-right {
+  background-image: url(../assets/red-car-go-right.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.red-car-go-left {
+  background-image: url(../assets/red-car-go-left.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.mercedes-car-go-right {
+  background-image: url(../assets/mercedes-car-go-right.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.mercedes-car-go-left {
+  background-image: url(../assets/mercedes-car-go-left.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.police-car-go-right {
+  background-image: url(../assets/police-car-go-right.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
+}
+
+.police-car-go-left {
+  background-image: url(../assets/police-car-go-left.png);
+  background-size: 50px 25px;
+  background-repeat: no-repeat;
 }
 
 #trunkR {

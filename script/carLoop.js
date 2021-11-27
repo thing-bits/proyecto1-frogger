@@ -2,7 +2,7 @@ function carLoop() {
   for (let i = 0; i < cars_lane.length; i++) {
     while (cars_lane[i].length < 2) {
       //create a new car if array empty
-      cars_lane[i].push(new Vehicle(pos, "car2", `road-${i}`));
+      cars_lane[i].push(new Vehicle(pos, "police-car-go-right", `road-${i}`));
       pos -= 160;
     }
     pos = 0;
