@@ -3,20 +3,19 @@
 
 let pos = 0;
 
-//calling the loop function
-const loop = new CarLoop()
 // se crea una rana
 const frog = new Frog();
 
 // se crea un vehículo
-const cars_lane_0 = [];
-const cars_lane_1 = [];
-const cars_lane_2 = [];
-const cars_lane_3 = [];
-const cars_lane_4 = [];
-const cars_lane_5 = [];
-const cars_lane_6 = [];
-const cars_lane_7 = [];
+const cars_lane = [];
+cars_lane[0] = [];
+cars_lane[1] = [];
+cars_lane[2] = [];
+cars_lane[3] = [];
+cars_lane[4] = [];
+cars_lane[5] = [];
+cars_lane[6] = [];
+cars_lane[7] = [];
 
 // Se crea la función del juego
 function startGame() {
@@ -30,9 +29,8 @@ function startGame() {
       gameOver();
       //div gameOver displayHidden
     }
-    loop.loop()
-    
-  }, 8);
+    carLoop();
+  }, 50);
 }
 // Se iniica el juego
 startGame();

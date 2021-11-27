@@ -33,6 +33,7 @@ body {
   background-color: blanchedalmond; /* se deja por ahora por si se ve ese color algo no va */
   overflow: hidden;
 }
+
 /* this will make the grayscale background when frog dies*/
 #game-zone.filter {
   -webkit-filter: grayscale(1);
@@ -107,9 +108,9 @@ body {
   position: absolute;
   width: 50px;
   height: 30px;
-  left: 0px;
+  /* left: 0px;
   bottom: 4px;
-  background-image: url(../assets/white-car-go-right.png);
+  background-image: url(../assets/white-car-go-right.png); */
   background-size: 50px 30px;
   background-repeat: no-repeat;
   z-index: 1;
@@ -144,6 +145,8 @@ body {
   width: 40%;
   height: 610px;
   z-index: 100;
+  -webkit-filter: drop-shadow(50px 50px 50px #222222);
+  filter: drop-shadow(-3px 5px 7px #222222);
 }
 #trunkL {
   background-image: url(../assets/sidetrunkL.png);
@@ -155,6 +158,8 @@ body {
   width: 50%;
   height: 610px;
   z-index: 100;
+  -webkit-filter: drop-shadow(50px 50px 50px #222222);
+  filter: drop-shadow(-3px 5px 7px #222222);
 }
 
 /*__________________GAME OVER________________*/
@@ -185,6 +190,7 @@ body {
  * animation bounce-in-top
  * ----------------------------------------
  */
+
 @-webkit-keyframes bounce-in-top {
   0% {
     -webkit-transform: translateY(-500px);
@@ -484,10 +490,6 @@ body {
 
 /*__________________GAME OVER________________*/
 
-
-
 /*__________________WIN GAME________________*/
-
-
 
 /*__________________WIN GAME________________*/
