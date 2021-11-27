@@ -1,6 +1,5 @@
-var frogMovementSound = new Audio('../sfx/jump_sound.wav');
-var squashedFrog = new Audio('../sfx/squased.wav')
-  
+// var frogMovementSound = new Audio("../sfx/jump_sound.wav");
+// var squashedFrog = new Audio("../sfx/squased.wav");
 
 // se crea una rana
 const frog = new Frog();
@@ -8,10 +7,8 @@ const frog = new Frog();
 // se crea un vehículo
 const cars_lane_1 = [];
 cars_lane_1[0] = new Vehicle();
-cars_lane_1[1] = new Vehicle(-300);
-cars_lane_1[2] = new Vehicle(-500);
-cars_lane_1[3] = new Vehicle(-700);
-cars_lane_1[4] = new Vehicle(-900);
+cars_lane_1[1] = new Vehicle();
+
 
 // Se crea la función del juego
 function startGame() {
@@ -21,22 +18,20 @@ function startGame() {
     }
     if (detectCollision(frog)) {
       // clearInterval(timerId);
-      squashedFrog.play()
+      // squashedFrog.play();
       gameOver();
       //div gameOver displayHidden
     }
-    cars_lane_1[0].move();
-    cars_lane_1[1].move();
-    cars_lane_1[2].move();
-    cars_lane_1[3].move();
-    cars_lane_1[4].move();
 
-    if (cars_lane_1[0].pos.left >= 700) {
-      console.log("works0");
+    //Bucle a revisar
+    if (cars_lane_1[0].pos.left >= 200) {
+      let rem = cars_lane_1.splice(cars_lane_1[0], 1);
+      console.log(rem)
+      cars_lane_1[1] = new Vehicle();
     }
-    if (cars_lane_1[1].pos.left >= 700) {
-      console.log("works1");
-    }
+    
+    cars_lane_1[0].move();
+    
   }, 10);
 }
 // Se iniica el juego
@@ -46,28 +41,30 @@ startGame();
 window.addEventListener("keydown", function (event) {
   if (event.code === "ArrowUp") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      setTimeout(function () {
+        // frogMovementSound.play();
+      }, 1);
       frog.moveUp();
     }
   }
 
   if (event.code === "ArrowDown") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      // frogMovementSound.play();
       frog.moveDown();
     }
   }
 
   if (event.code === "ArrowLeft") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      // frogMovementSound.play();
       frog.moveLeft();
     }
   }
 
   if (event.code === "ArrowRight") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      // frogMovementSound.play();
       frog.moveRight();
     }
   }
@@ -102,6 +99,4 @@ function gameOver() {
   grayScaleGZ.classList.add("filter");
 }
 
-function winGame() {
-
-}
+function winGame() {}

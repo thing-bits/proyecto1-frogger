@@ -4,6 +4,9 @@ function Vehicle(pos = -100) {
     left: pos,
     top: 3,
   };
+  this.width = 0;
+  this.height = 0;
+  
   this.road0 = document.querySelector("#road-0");
   this.car = document.createElement("div");
   this.car.setAttribute("class", "car");
