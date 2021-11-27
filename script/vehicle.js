@@ -15,9 +15,9 @@ function Vehicle(pos = -150, model, road, direction) {
       case 'right':
         this.pos.left += 1;
         this.car.style.left = this.pos.left + "px";
-        if (this.pos.left >= 600) {
-          this.road.removeChild(this.car);
-        }
+        // if (this.pos.left >= 200) { //eliminte the div when 600px or more
+        //   this.road.removeChild(this.car);
+        // }
         break;
       case 'left':
         this.pos.left -= 1;
