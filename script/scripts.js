@@ -1,6 +1,10 @@
 //var frogMovementSound = new Audio('../sfx/jump_sound.wav');
 //var squashedFrog = new Audio('../sfx/squased.wav')
-let pos = 0
+
+let pos = 0;
+
+//calling the loop function
+const loop = new CarLoop()
 // se crea una rana
 const frog = new Frog();
 
@@ -26,24 +30,9 @@ function startGame() {
       gameOver();
       //div gameOver displayHidden
     }
-
-    if (cars_lane_0.length < 3) {
-      //create a new car if array emptyCells:
-      cars_lane_0.unshift(new Vehicle(pos, "car2", "road-0"));
-      pos -= 150
-      console.log(pos)
-    }
-    for (let i = 0; i < cars_lane_0.length; i++) {
-      if (cars_lane_0[i].pos.left >= 200) {
-        //eliminate the car when outside the canva
-        cars_lane_0.splice(cars_lane_0[i], 1);
-        cars_lane_0.unshift(new Vehicle(pos, "car2", "road-0"));
-      }
-      //for the car apply the move()
-      cars_lane_0[i].move("right");
-    }
-
-  }, 20);
+    loop.loop()
+    
+  }, 8);
 }
 // Se iniica el juego
 startGame();
@@ -103,6 +92,9 @@ function gameOver() {
   const gameOverBox = document.querySelector("#tudo");
   gameOverBox.classList.remove("showGameOver");
   gameOverBox.classList.add("heartbeat");
+
+  //focus the yes button when lose
+  document.querySelector("#autoFocus").focus();
 
   const grayScaleGZ = document.querySelector("#game-zone");
   grayScaleGZ.classList.add("filter");
