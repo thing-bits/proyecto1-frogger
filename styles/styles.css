@@ -118,6 +118,21 @@ body {
   filter: drop-shadow(-3px 5px 7px #222222);
 }
 
+.car2 {
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  left: 0px;
+  bottom: 4px;
+  background-image: url(../assets/white-car-go-right.png);
+  background-size: 50px 30px;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  -webkit-filter: drop-shadow(50px 50px 50px #222222);
+  filter: drop-shadow(-3px 5px 7px #222222);
+}
+
 #trunkR {
   /* background-color: red; */
   background-image: url(../assets/sidetrunkR.png);
