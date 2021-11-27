@@ -1,13 +1,12 @@
 //var frogMovementSound = new Audio('../sfx/jump_sound.wav');
 //var squashedFrog = new Audio('../sfx/squased.wav')
-  
 
 // se crea una rana
 const frog = new Frog();
 
 // se crea un vehículo
 const cars_lane = [];
-cars_lane[0] = new Vehicle(100, 'car2', 'road-2');
+cars_lane[0] = new Vehicle(0, "car2", "road-2");
 
 
 // Se crea la función del juego
@@ -18,13 +17,19 @@ function startGame() {
     }
     if (detectCollision(frog)) {
       // clearInterval(timerId);
-      squashedFrog.play()
+      // squashedFrog.play()
       gameOver();
       //div gameOver displayHidden
     }
-    cars_lane[0].move('right');
 
-  }, 10);
+    if (cars_lane[0].pos.left >= 600) {
+      cars_lane.splice(cars_lane[0], 1);
+      cars_lane[0] = new Vehicle(0, "car2", "road-2");
+    }
+
+    cars_lane[0].move("right");
+    
+  }, 1);
 }
 // Se iniica el juego
 startGame();
@@ -33,28 +38,28 @@ startGame();
 window.addEventListener("keydown", function (event) {
   if (event.code === "ArrowUp") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      // frogMovementSound.play();
       frog.moveUp();
     }
   }
 
   if (event.code === "ArrowDown") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      // frogMovementSound.play();
       frog.moveDown();
     }
   }
 
   if (event.code === "ArrowLeft") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      // frogMovementSound.play();
       frog.moveLeft();
     }
   }
 
   if (event.code === "ArrowRight") {
     if (frog.squashed === false) {
-      frogMovementSound.play();
+      // frogMovementSound.play();
       frog.moveRight();
     }
   }
@@ -62,7 +67,7 @@ window.addEventListener("keydown", function (event) {
 
 function detectCollision(frog) {
   // check for collapsed function
-  let cars = document.querySelectorAll(".car");
+  let cars = document.querySelectorAll(".vehicle");
   let frogDimension = frog.frog.getBoundingClientRect();
 
   for (let i = 0; i < cars.length; i++) {
@@ -89,6 +94,4 @@ function gameOver() {
   grayScaleGZ.classList.add("filter");
 }
 
-function winGame() {
-
-}
+function winGame() {}
