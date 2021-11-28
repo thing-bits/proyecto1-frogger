@@ -1,7 +1,8 @@
 //var frogMovementSound = new Audio('../sfx/jump_sound.wav');
 //var squashedFrog = new Audio('../sfx/squased.wav')
 
-let pos = 0;
+let posL = 0;
+let posR = 0;
 
 // se crea una rana
 const frog = new Frog();
@@ -19,22 +20,21 @@ cars_lane[7] = [];
 
 // Se crea la función del juego
 function startGame() {
+  const startGameBox = document.querySelector("#startWindow");
+  startGameBox.classList.add("hideStartGame");
+  
   setInterval(function () {
-    if (frog.pos.top <= -400) {
-      winGame();
-    }
+    // if (frog.pos.top <= -400) {
+    //   winGame();
+    // }
     if (detectCollision(frog)) {
-      // clearInterval(timerId);
       // squashedFrog.play()
       gameOver();
-      //div gameOver displayHidden
     }
 
-    carLoop("mercedes");
+    carLoop();
   }, 50);
 }
-// Se iniica el juego
-startGame();
 
 // frog movement
 window.addEventListener("keydown", function (event) {

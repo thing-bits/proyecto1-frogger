@@ -15,39 +15,46 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <title>Frogger</title>
   </head>
 
   <body>
     <section id="game-board">
-      <!-- <section id="winGame" class="showWinGame">
-        <div class="gameWin">
+      <!-- class="hideStartGame"  Create this whi JS-->
+      <!--  -->
+      <section id="startWindow">
+        <div class="startGame">
+          <p>FROGGER</p>
           <p>GAME</p>
-          <p>OVER</p>
         </div>
-        <div class="continue"><p>CONTINUE?</p></div>
-        <div class="opcoes">
-          <div class="yes"><a href="."> YES </a></div>
-          <div class="no"><a href="#"> NO </a></div>
+        <div class="startBut">
+          <div class="yes"><a onclick="startGame()"> CROACK! </a></div>
         </div>
-      </section> -->
+      </section>
+      <!--  -->
       <section id="losWindow" class="showGameOver">
         <div class="gameover">
           <p>GAME</p>
           <p>OVER</p>
         </div>
-        <div class="continue"><p>CONTINUE?</p></div>
-        <div class="opciones">
-          <div class="yes"><a id="autoFocus" href="."> YES </a></div>
-          <div class="no"><a href="#"> NO </a></div>
+        <div class="continueLose"><p>PLAY AGAIN?</p></div>
+        <div class="opcionesLose">
+          <div class="yesLose"><a id="autoFocus" href="."> YES </a></div>
+          <div class="noLose"><a href="#"> NO </a></div>
         </div>
       </section>
       <div id="game-zone">
         <div id="trunkR"></div>
         <div id="trunkL"></div>
         <div id="goal"></div>
-        <div class="road" id="road-6"></div>
         <div class="road" id="road-7"></div>
+        <div class="road" id="road-6"></div>
         <div class="road" id="road-5"></div>
         <div class="road" id="road-4"></div>
         <div class="road" id="rest-zone"></div>
