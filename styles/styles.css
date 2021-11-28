@@ -19,17 +19,17 @@ body {
 
 #game-board {
   position: relative;
-  margin: 10px auto;
-  width: 800px;
+  margin: 150px auto;
+  width: 1200px;
   height: 600px;
   background-color: rgba(0, 0, 0, 0.226);
 }
 
 #game-zone {
   position: absolute;
-  margin: 70px 100px;
-  width: 600px;
-  height: 460px;
+  margin: 0 200px;
+  width: 800px;
+  height: 600px;
   background-color: blanchedalmond; /* se deja por ahora por si se ve ese color algo no va */
   overflow: hidden;
 }
@@ -38,21 +38,22 @@ body {
 #game-zone.filter {
   -webkit-filter: grayscale(1);
 }
-
+/* lanes */
 #goal {
   width: 100%;
-  height: 40px;
-  background-image: url(../assets/superGrass.jpeg);
+  height: 53px;
+  background-image: url(../assets/decoration/superGrass.jpeg);
   background-size: 7%;
   border-bottom: 2px white solid;
+  filter:saturate(190%)
 }
 
 .road {
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 53px;
   background-color: gray;
-  background-image: url(../assets/paviment.jpeg);
+  background-image: url(../assets/decoration/paviment.jpeg);
   background-size: 50%;
   border-bottom: 2px white dashed;
 }
@@ -68,8 +69,8 @@ body {
 #rest-zone {
   position: relative;
   width: 100%;
-  height: 40px;
-  background-image: url(../assets/superGrass.jpeg);
+  height: 53px;
+  background-image: url(../assets/decoration/superGrass.jpeg);
   background-size: 7%;
   border-bottom: 2px white solid;
   border-top: 2px white solid;
@@ -78,33 +79,33 @@ body {
 #start {
   position: relative;
   width: 100%;
-  height: 40px;
-  background-image: url(../assets/superGrass.jpeg);
+  height: 53px;
+  background-image: url(../assets/decoration/superGrass.jpeg);
   background-size: 7%;
   border-top: 2px white solid;
 }
-
+/* lanes */
 #frog {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background-image: url(../assets/frog.png);
-  background-size: 30px 30px;
+  width: 35px;
+  height: 35px;
+  background-image: url(../assets/frogs/frog-head.png);
+  background-size: 35px 35px;
   background-repeat: no-repeat;
-  left: 290px;
-  top: 5px;
+  left: 370px;
+  top: 7px;
   z-index: 0;
   transition: all 0.1s ease;
 
   -webkit-filter: drop-shadow(2px 2px 2px #222222);
-  filter: drop-shadow(-2px 2px 4px #222222);
+  filter: drop-shadow(-2px 2px 3px #222222);
 }
 
 #frog.dead {
   background-color: red;
 }
 
-.car {
+.vehicle {
   position: absolute;
   width: 50px;
   height: 30px;
@@ -116,71 +117,85 @@ body {
   z-index: 1;
 
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
+  filter: drop-shadow(-5px 5px 4px #222222);
 }
 
-.car2 {
-  position: absolute;
-  width: 50px;
-  height: 30px;
-  left: 0px;
-  bottom: 4px;
-  background-image: url(../assets/white-car-go-right.png);
-  background-size: 50px 30px;
-  background-repeat: no-repeat;
-  z-index: 1;
+.familiar {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/yellow_sedan.png);
+}
 
-  -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
+.mercedes {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/mercedes-car-go-right.png);
+  filter: brightness(140%);
+}
+
+.sedan {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/yellow_sedan.png);
+}
+ 
+.bigTruck {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/white-blue_load_bigtruck.png);
+  /* size */
+  width: 120px;
+  height: 30px;
+  background-size: 120px 30px;
 }
 
 #trunkR {
   /* background-color: red; */
-  background-image: url(../assets/sidetrunkR.png);
-  background-size: 100% 610px;
-  transform: rotate(13deg);
+  background-image: url(../assets/decoration/sidetrunkR.png);
+  background-size: 100% 910px;
+  transform: rotate(15deg);
   position: absolute;
-  left: -44px;
-  top: -100px;
+  left: -59px;
+  top: -190px;
   width: 40%;
-  height: 610px;
+  height: 810px;
   z-index: 100;
+
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
+  filter: drop-shadow(10px 5px 5px #222222);
 }
 #trunkL {
-  background-image: url(../assets/sidetrunkL.png);
-  background-size: 100% 610px;
-  transform: rotate(11deg);
+  background-image: url(../assets/decoration/sidetrunkL.png);
+  background-size: 100% 810px;
+  transform: rotate(17deg);
   position: absolute;
-  right: -49px;
+  right: -90px;
   top: -100px;
   width: 50%;
-  height: 610px;
+  height: 810px;
   z-index: 100;
+  
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
+  filter: drop-shadow(-10px -5px 5px #222222);
 }
 
 /*__________________GAME OVER________________*/
 
-#tudo {
+#losWindow {
   z-index: 10;
   position: absolute;
   width: 375px;
   height: 270px;
   top: 25%;
-  left: 25%;
+  left: 35%;
   border-radius: 30px;
-  background-image: url(../assets/bkFrog.jpeg);
-  background-size: 50%;
+  background-image: url(../assets/decoration/bkFrog.jpeg);
+  /* change game over background  */
+  background-size: 20%;
+  filter: brightness(130%);
 }
 
-#tudo.showGameOver {
+#losWindow.showGameOver {
   display: none;
 }
 
-#tudo.heartbeat {
+#losWindow.heartbeat {
   -webkit-animation: bounce-in-top 1.1s both;
   animation: bounce-in-top 1.1s both;
 }
@@ -331,7 +346,7 @@ body {
   text-shadow: 2.5px 2.5px #000000;
 }
 
-.opcoes {
+.opciones {
   width: 275px;
   height: auto;
   padding-top: 25px;
@@ -351,9 +366,27 @@ body {
   background: #006400;
   margin-right: 15px;
   float: left;
+
+  -webkit-animation-name: animaciones2;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+
+  -moz-animation-name: animaciones2;
+  -moz-animation-duration: 0.8s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+
+  animation-name: animaciones2;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-@-webkit-keyframes animacao2 {
+@-webkit-keyframes animaciones2 {
   from {
     -webkit-transform: scale(1);
   }
@@ -362,7 +395,7 @@ body {
   }
 }
 
-@-moz-keyframes animacao2 {
+@-moz-keyframes animaciones2 {
   from {
     -moz-transform: scale(1);
   }
@@ -371,33 +404,13 @@ body {
   }
 }
 
-@keyframes animacao2 {
+@keyframes animaciones2 {
   from {
     transform: scale(1);
   }
   to {
     transform: scale(1.1);
   }
-}
-
-.yes a:hover {
-  -webkit-animation-name: animacao2;
-  -webkit-animation-duration: 0.8s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-
-  -moz-animation-name: animacao2;
-  -moz-animation-duration: 0.8s;
-  -moz-animation-timing-function: linear;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-direction: alternate;
-
-  animation-name: animacao2;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 .no a {
@@ -414,7 +427,7 @@ body {
   float: left;
 }
 
-@-webkit-keyframes animacao3 {
+@-webkit-keyframes animaciones3 {
   0% {
     -webkit-transform: translate(-5px, 0px);
   }
@@ -432,7 +445,7 @@ body {
   }
 }
 
-@-moz-keyframes animacao3 {
+@-moz-keyframes animaciones3 {
   0% {
     -moz-transform: translate(-5px, 0px);
   }
@@ -450,7 +463,7 @@ body {
   }
 }
 
-@keyframes animacao3 {
+@keyframes animaciones3 {
   0% {
     transform: translate(-5px, 0px);
   }
@@ -469,19 +482,19 @@ body {
 }
 
 .no a:hover {
-  -webkit-animation-name: animacao3;
+  -webkit-animation-name: animaciones3;
   -webkit-animation-duration: 0.15s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
 
-  -moz-animation-name: animacao3;
+  -moz-animation-name: animaciones3;
   -moz-animation-duration: 0.15s;
   -moz-animation-timing-function: linear;
   -moz-animation-iteration-count: infinite;
   -moz-animation-direction: alternate;
 
-  animation-name: animacao3;
+  animation-name: animaciones3;
   animation-duration: 0.15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

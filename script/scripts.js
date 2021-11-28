@@ -29,7 +29,8 @@ function startGame() {
       gameOver();
       //div gameOver displayHidden
     }
-    carLoop();
+
+    carLoop("mercedes");
   }, 50);
 }
 // Se iniica el juego
@@ -87,7 +88,7 @@ function detectCollision(frog) {
 }
 
 function gameOver() {
-  const gameOverBox = document.querySelector("#tudo");
+  const gameOverBox = document.querySelector("#losWindow");
   gameOverBox.classList.remove("showGameOver");
   gameOverBox.classList.add("heartbeat");
 
