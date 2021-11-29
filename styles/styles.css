@@ -19,17 +19,17 @@ body {
 
 #game-board {
   position: relative;
-  margin: 10px auto;
-  width: 800px;
+  margin: 150px auto;
+  width: 1200px;
   height: 600px;
   background-color: rgba(0, 0, 0, 0.226);
 }
 
 #game-zone {
   position: absolute;
-  margin: 70px 100px;
-  width: 600px;
-  height: 460px;
+  margin: 0 200px;
+  width: 800px;
+  height: 600px;
   background-color: blanchedalmond; /* se deja por ahora por si se ve ese color algo no va */
   overflow: hidden;
 }
@@ -38,21 +38,65 @@ body {
 #game-zone.filter {
   -webkit-filter: grayscale(1);
 }
-
+/* lanes */
 #goal {
   width: 100%;
-  height: 40px;
-  background-image: url(../assets/superGrass.jpeg);
+  height: 53px;
+  background-image: url(../assets/decoration/superGrass.jpeg);
   background-size: 7%;
   border-bottom: 2px white solid;
+  filter: saturate(190%);
 }
+
+/* Nest  */
+
+#goal > div {
+
+  height: 45px;
+  width: 45px;
+  /* border: 1px red solid; */
+  display: inline-block;
+}
+
+#nest0 {
+  position: relative;
+  left: 142px;
+  border: black 3px solid;
+}
+
+#nest1 {
+  position: relative;
+  left: 195px;
+  border: red 3px solid;
+}
+
+#nest2 {
+  position: relative;
+  left: 252px;
+  border: black 3px solid;
+}
+
+#nest3 {
+  position: relative;
+  left: 307px;
+  border: red 3px solid;
+}
+
+#nest4 {
+  position: relative;
+  left: 362px;
+  border: black 3px solid;
+}  
+
+
+/* Nest  */
 
 .road {
   position: relative;
   width: 100%;
-  height: 40px;
+  height: 53px;
   background-color: gray;
-  background-image: url(../assets/paviment.jpeg);
+  background-image: url(../assets/decoration/paviment.jpeg);
   background-size: 50%;
   border-bottom: 2px white dashed;
 }
@@ -68,8 +112,8 @@ body {
 #rest-zone {
   position: relative;
   width: 100%;
-  height: 40px;
-  background-image: url(../assets/superGrass.jpeg);
+  height: 53px;
+  background-image: url(../assets/decoration/superGrass.jpeg);
   background-size: 7%;
   border-bottom: 2px white solid;
   border-top: 2px white solid;
@@ -78,26 +122,59 @@ body {
 #start {
   position: relative;
   width: 100%;
-  height: 40px;
-  background-image: url(../assets/superGrass.jpeg);
+  height: 53px;
+  background-image: url(../assets/decoration/superGrass.jpeg);
   background-size: 7%;
   border-top: 2px white solid;
 }
-
+/* lanes */
 #frog {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background-image: url(../assets/frog.png);
-  background-size: 30px 30px;
+  width: 35px;
+  height: 35px;
+  background-image: url(../assets/frogs/frog-head.png);
+  background-size: 35px 35px;
   background-repeat: no-repeat;
-  left: 290px;
-  top: 5px;
+  left: 370px;
+  top: 7px;
   z-index: 0;
   transition: all 0.1s ease;
-
   -webkit-filter: drop-shadow(2px 2px 2px #222222);
-  filter: drop-shadow(-2px 2px 4px #222222);
+  filter: drop-shadow(-2px 2px 3px #222222);
+}
+
+#frog.up {
+  -webkit-animation: rotate-scale-up-hor 0.35s linear reverse forwards;
+  animation: rotate-scale-up-hor 0.35s linear reverse forwards;
+}
+
+@-webkit-keyframes rotate-scale-up-hor {
+  0% {
+    -webkit-transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateX(-180deg);
+    transform: scale(2) rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateX(-360deg);
+    transform: scale(1) rotateX(-360deg);
+  }
+}
+@keyframes rotate-scale-up-hor {
+  0% {
+    -webkit-transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    -webkit-transform: scale(2) rotateX(-180deg);
+    transform: scale(2) rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateX(-360deg);
+    transform: scale(1) rotateX(-360deg);
+  }
 }
 
 #frog.dead {
@@ -106,160 +183,140 @@ body {
 
 .vehicle {
   position: absolute;
-  width: 50px;
+  width: 60px;
   height: 30px;
-  left: 0px;
-  bottom: 4px;
-  background-size: 50px 30px;
+  background-size: 60px 30px;
   background-repeat: no-repeat;
   z-index: 1;
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
+  filter: drop-shadow(-5px 5px 4px #222222);
 }
 
-.white-car-go-right {
-  background-image: url(../assets/white-car-go-right.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
+.familiar {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/white_hatchback.png);
+}
+.familiar_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/white_hatchback.png);
 }
 
-.white-car-go-left {
-  background-image: url(../assets/white-car-go-left.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
+.mercedes {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/mercedes-car-go-right.png);
+  filter: brightness(140%);
 }
 
-.sport-car-go-right {
-  background-image: url(../assets/sport-car-go-right.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
+.sedan {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/yellow_sedan.png);
+}
+.sedan_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/yellow_sedan.png);
 }
 
-.sport-car-go-left {
-  background-image: url(../assets/sport-car-go-left.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
+.bigTruck {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/white-blue_load_bigtruck.png);
+  /* size */
+  width: 120px;
+  height: 30px;
+  background-size: 120px 30px;
 }
 
-.orange-car-go-right {
-  background-image: url(../assets/orange-car-go-right.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
+.smallTruck {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/red_empty_bigtruck.png);
+
+  width: 80px;
+  height: 30px;
+  background-size: 80px 30px;
+}
+.smallTruck_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/red_empty_bigtruck.png);
+
+  width: 80px;
+  height: 30px;
+  background-size: 80px 30px;
 }
 
-.orange-car-go-left {
-  background-image: url(../assets/orange-car-go-left.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
+.police {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/police-car-go-right.png);
 }
 
-.blue-car-go-right {
-  background-image: url(../assets/blue-car-go-right.png);
-  background-size: 50px 30px;
-  background-repeat: no-repeat;
+.orangeCar {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/orange-car-go-right.png);
+
+  width: 60px;
+  height: 30px;
+  background-size: 60px 30px;
 }
 
-.blue-car-go-left {
-  background-image: url(../assets/blue-car-go-left.png);
-  background-size: 50px 30px;
-  background-repeat: no-repeat;
+.redCar {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/red-car-go-right.png);
 }
 
-.green-car-go-right {
-  background-image: url(../assets/green-car-go-right.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
-}
-
-.green-car-go-left {
-  background-image: url(../assets/green-car-go-left.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
-}
-
-.red-car-go-right {
-  background-image: url(../assets/red-car-go-right.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
-}
-
-.red-car-go-left {
-  background-image: url(../assets/red-car-go-left.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
-}
-
-.mercedes-car-go-right {
-  background-image: url(../assets/mercedes-car-go-right.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
-}
-
-.mercedes-car-go-left {
-  background-image: url(../assets/mercedes-car-go-left.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
-}
-
-.police-car-go-right {
-  background-image: url(../assets/police-car-go-right.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
-}
-
-.police-car-go-left {
-  background-image: url(../assets/police-car-go-left.png);
-  background-size: 50px 25px;
-  background-repeat: no-repeat;
+.redCar_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/red-car-go-left.png);
 }
 
 #trunkR {
   /* background-color: red; */
-  background-image: url(../assets/sidetrunkR.png);
-  background-size: 100% 610px;
-  transform: rotate(13deg);
+  background-image: url(../assets/decoration/sidetrunkR.png);
+  background-size: 100% 910px;
+  transform: rotate(15deg);
   position: absolute;
-  left: -44px;
-  top: -100px;
+  left: -59px;
+  top: -190px;
   width: 40%;
-  height: 610px;
+  height: 810px;
   z-index: 100;
+
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
+  filter: drop-shadow(10px 5px 5px #222222);
 }
 #trunkL {
-  background-image: url(../assets/sidetrunkL.png);
-  background-size: 100% 610px;
-  transform: rotate(11deg);
+  background-image: url(../assets/decoration/sidetrunkL.png);
+  background-size: 100% 810px;
+  transform: rotate(17deg);
   position: absolute;
-  right: -49px;
+  right: -90px;
   top: -100px;
   width: 50%;
-  height: 610px;
+  height: 810px;
   z-index: 100;
+
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-3px 5px 7px #222222);
+  filter: drop-shadow(-10px -5px 5px #222222);
 }
 
 /*__________________GAME OVER________________*/
 
-#tudo {
+#losWindow {
   z-index: 10;
   position: absolute;
   width: 375px;
   height: 270px;
   top: 25%;
-  left: 25%;
+  left: 35%;
   border-radius: 30px;
-  background-image: url(../assets/bkFrog.jpeg);
-  background-size: 50%;
+  background-image: url(../assets/decoration/bkFrog.jpeg);
+  /* change game over background  */
+  background-size: 20%;
+  filter: brightness(130%);
 }
 
-#tudo.showGameOver {
+#losWindow.showGameOver {
   display: none;
 }
 
-#tudo.heartbeat {
+#losWindow.heartbeat {
   -webkit-animation: bounce-in-top 1.1s both;
   animation: bounce-in-top 1.1s both;
 }
@@ -393,13 +450,13 @@ body {
   color: #ffffff;
 }
 
-.continue {
+.continueLose {
   width: 375px;
   height: auto;
   padding-top: 20px;
 }
 
-.continue p {
+.continueLose p {
   margin-top: 0px;
   margin-bottom: 0px;
   text-align: center;
@@ -410,14 +467,14 @@ body {
   text-shadow: 2.5px 2.5px #000000;
 }
 
-.opcoes {
+.opcionesLose {
   width: 275px;
   height: auto;
   padding-top: 25px;
   margin: auto;
 }
 
-.yes a {
+.yesLose a {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
@@ -430,9 +487,27 @@ body {
   background: #006400;
   margin-right: 15px;
   float: left;
+
+  -webkit-animation-name: animaciones2;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+
+  -moz-animation-name: animaciones2;
+  -moz-animation-duration: 0.8s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+
+  animation-name: animaciones2;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-@-webkit-keyframes animacao2 {
+@-webkit-keyframes animaciones2 {
   from {
     -webkit-transform: scale(1);
   }
@@ -441,7 +516,7 @@ body {
   }
 }
 
-@-moz-keyframes animacao2 {
+@-moz-keyframes animaciones2 {
   from {
     -moz-transform: scale(1);
   }
@@ -450,7 +525,7 @@ body {
   }
 }
 
-@keyframes animacao2 {
+@keyframes animaciones2 {
   from {
     transform: scale(1);
   }
@@ -459,27 +534,7 @@ body {
   }
 }
 
-.yes a:hover {
-  -webkit-animation-name: animacao2;
-  -webkit-animation-duration: 0.8s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-
-  -moz-animation-name: animacao2;
-  -moz-animation-duration: 0.8s;
-  -moz-animation-timing-function: linear;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-direction: alternate;
-
-  animation-name: animacao2;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-.no a {
+.noLose a {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
@@ -493,7 +548,7 @@ body {
   float: left;
 }
 
-@-webkit-keyframes animacao3 {
+@-webkit-keyframes animaciones3 {
   0% {
     -webkit-transform: translate(-5px, 0px);
   }
@@ -511,7 +566,7 @@ body {
   }
 }
 
-@-moz-keyframes animacao3 {
+@-moz-keyframes animaciones3 {
   0% {
     -moz-transform: translate(-5px, 0px);
   }
@@ -529,7 +584,7 @@ body {
   }
 }
 
-@keyframes animacao3 {
+@keyframes animaciones3 {
   0% {
     transform: translate(-5px, 0px);
   }
@@ -547,20 +602,20 @@ body {
   }
 }
 
-.no a:hover {
-  -webkit-animation-name: animacao3;
+.noLose a:hover {
+  -webkit-animation-name: animaciones3;
   -webkit-animation-duration: 0.15s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
 
-  -moz-animation-name: animacao3;
+  -moz-animation-name: animaciones3;
   -moz-animation-duration: 0.15s;
   -moz-animation-timing-function: linear;
   -moz-animation-iteration-count: infinite;
   -moz-animation-direction: alternate;
 
-  animation-name: animacao3;
+  animation-name: animaciones3;
   animation-duration: 0.15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -571,4 +626,173 @@ body {
 
 /*__________________WIN GAME________________*/
 
-/*__________________WIN GAME________________*/
+/*__________________Start Window________________*/
+
+#startWindow {
+  z-index: 10;
+  position: absolute;
+  width: 390px;
+  height: 270px;
+  top: 25%;
+  left: 33%;
+  border-radius: 30px;
+  background-color: #a1b3e78f;
+  /* background-image: url(../assets/decoration/bkFrog.jpeg); */
+  /* change game over background  */
+  background-size: 20%;
+  filter: brightness(130%);
+}
+
+#startWindow.hideStartGame {
+  /* display: none; */
+  -webkit-animation: rotate-out-center 0.6s
+    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: rotate-out-center 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-11-28 22:43:11
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation rotate-out-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes rotate-out-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+}
+@keyframes rotate-out-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+}
+/**
+* ----------------------------------------
+* animation rotate-out-center
+* ----------------------------------------
+*/
+
+.startGame {
+  width: 375px;
+  height: auto;
+  padding-top: 30px;
+  background: none;
+}
+
+.startGame p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 55px;
+  font-family: "Corben", cursive;
+  line-height: 77px;
+  text-align: center;
+  text-shadow: 5px 5px #000000dc;
+  color: #148e45;
+}
+
+/* .continue {
+  width: 375px;
+  height: auto;
+  padding-top: 20px;
+}
+
+.continue p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: corbel;
+  color: #ffffff;
+  text-shadow: 2.5px 2.5px #000000;
+} */
+
+.startBut {
+  width: 275px;
+  height: auto;
+  padding-top: 25px;
+  margin: auto;
+}
+
+.yes a {
+  position: relative;
+  left: 20%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: corbel;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 2.5px 2.5px #000000;
+  padding: 12.5px 50px 12.5px 50px;
+  border-radius: 10px;
+  background: #006400c7;
+  margin-right: 15px;
+  float: left;
+
+  -webkit-animation-name: animaciones2;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+
+  -moz-animation-name: animaciones2;
+  -moz-animation-duration: 0.8s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+
+  animation-name: animaciones2;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes animaciones2 {
+  from {
+    -webkit-transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.2);
+  }
+}
+
+@-moz-keyframes animaciones2 {
+  from {
+    -moz-transform: scale(1);
+  }
+  to {
+    -moz-transform: scale(1.1);
+  }
+}
+
+@keyframes animaciones2 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+/*__________________Start Window________________*/

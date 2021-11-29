@@ -1,7 +1,8 @@
-//var frogMovementSound = new Audio('../sfx/jump_sound.wav');
+var frogMovementSound = new Audio("../sfx/jumpSound/jump.flac");
 //var squashedFrog = new Audio('../sfx/squased.wav')
 
-let pos = 0;
+let posL = 0;
+let posR = 0;
 
 // se crea una rana
 const frog = new Frog();
@@ -19,48 +20,50 @@ cars_lane[7] = [];
 
 // Se crea la función del juego
 function startGame() {
-  setInterval(function () {
-    if (frog.pos.top <= -400) {
+  const startGameBox = document.querySelector("#startWindow");
+  startGameBox.classList.add("hideStartGame");
+
+  setInterval(function (){
       winGame();
-    }
     if (detectCollision(frog)) {
-      // clearInterval(timerId);
       // squashedFrog.play()
       gameOver();
-      //div gameOver displayHidden
     }
     carLoop();
   }, 50);
 }
-// Se iniica el juego
-startGame();
+
+const moveOnceKeyPressed = document.querySelector("#start");
 
 // frog movement
+
+
 window.addEventListener("keydown", function (event) {
   if (event.code === "ArrowUp") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveUp();
+      this.frog.setAttribute("class", "up");
     }
   }
 
   if (event.code === "ArrowDown") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveDown();
     }
   }
 
   if (event.code === "ArrowLeft") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveLeft();
     }
   }
 
   if (event.code === "ArrowRight") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveRight();
     }
   }
@@ -87,7 +90,7 @@ function detectCollision(frog) {
 }
 
 function gameOver() {
-  const gameOverBox = document.querySelector("#tudo");
+  const gameOverBox = document.querySelector("#losWindow");
   gameOverBox.classList.remove("showGameOver");
   gameOverBox.classList.add("heartbeat");
 
@@ -98,4 +101,16 @@ function gameOver() {
   grayScaleGZ.classList.add("filter");
 }
 
-function winGame() {}
+function winGame() { 
+if (frog.pos.top <= -540 && frog.pos.left >= 142 && frog.pos.left <= 187) {
+  console.log('nest0')
+} else if (frog.pos.top <= -540 && frog.pos.left >= 255 && frog.pos.left <= 300) {
+  console.log('nest1')
+} else if (frog.pos.top <= -540 && frog.pos.left >= 365 && frog.pos.left <= 410) {
+  console.log('nest2')
+} else if (frog.pos.top <= -540 && frog.pos.left >= 475 && frog.pos.left <= 520) {
+  console.log('nest3')
+} else if (frog.pos.top <= -540 && frog.pos.left >= 585 && frog.pos.left <= 630) {
+  console.log('nest4')
+}
+}
