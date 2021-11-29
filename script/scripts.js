@@ -1,4 +1,4 @@
-//var frogMovementSound = new Audio('../sfx/jump_sound.wav');
+var frogMovementSound = new Audio("../sfx/jumpSound/jump.flac");
 //var squashedFrog = new Audio('../sfx/squased.wav')
 
 let posL = 0;
@@ -22,7 +22,7 @@ cars_lane[7] = [];
 function startGame() {
   const startGameBox = document.querySelector("#startWindow");
   startGameBox.classList.add("hideStartGame");
-  
+
   setInterval(function () {
     // if (frog.pos.top <= -400) {
     //   winGame();
@@ -31,37 +31,41 @@ function startGame() {
       // squashedFrog.play()
       gameOver();
     }
-
     carLoop();
   }, 50);
 }
 
+const moveOnceKeyPressed = document.querySelector("#start");
+
 // frog movement
+
+
 window.addEventListener("keydown", function (event) {
   if (event.code === "ArrowUp") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveUp();
+      this.frog.setAttribute("class", "up");
     }
   }
 
   if (event.code === "ArrowDown") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveDown();
     }
   }
 
   if (event.code === "ArrowLeft") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveLeft();
     }
   }
 
   if (event.code === "ArrowRight") {
     if (frog.squashed === false) {
-      // frogMovementSound.play();
+      frogMovementSound.play();
       frog.moveRight();
     }
   }

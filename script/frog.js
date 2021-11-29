@@ -12,6 +12,7 @@ function Frog() {
     top: 7,
   };
   this.direction = null;
+
   this.moveUp = function () {
     this.pos.top -= 55;
     this.frog.style.top = `${this.pos.top}px`;
