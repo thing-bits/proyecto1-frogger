@@ -42,7 +42,7 @@ body {
 #goal {
   width: 100%;
   height: 53px;
-  background-image: url(../assets/decoration/superGrass.jpeg);
+  background-image: url(../assets/decoration/cartoon_water.png);
   background-size: 7%;
   border-bottom: 2px white solid;
   filter: saturate(190%);
@@ -51,43 +51,51 @@ body {
 /* Nest  */
 
 #goal > div {
-
   height: 45px;
   width: 45px;
-  /* border: 1px red solid; */
   display: inline-block;
+  /* background-image: url(../assets/decoration/nest01.png); */
+  /* background-size: 50px 50px; */
 }
 
 #nest0 {
   position: relative;
   left: 142px;
-  border: black 3px solid;
+  border: 1px solid red;
 }
 
 #nest1 {
   position: relative;
   left: 195px;
-  border: red 3px solid;
+  border: 1px solid black;
 }
 
 #nest2 {
   position: relative;
   left: 252px;
-  border: black 3px solid;
+  border: 1px solid red;
 }
 
 #nest3 {
   position: relative;
   left: 307px;
-  border: red 3px solid;
+  border: 1px solid black;
 }
 
 #nest4 {
   position: relative;
   left: 362px;
-  border: black 3px solid;
-}  
+  border: 1px solid red;
+}
 
+.frog {
+  width: 45px;
+  height: 45px;
+  background-image: url(../assets/frogs/frog-head.png);
+  background-size: 45px 45px;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
 
 /* Nest  */
 
@@ -127,6 +135,7 @@ body {
   background-size: 7%;
   border-top: 2px white solid;
 }
+
 /* lanes */
 #frog {
   position: absolute;
@@ -143,7 +152,7 @@ body {
   filter: drop-shadow(-2px 2px 3px #222222);
 }
 
-#frog.up {
+/* #frog.up {
   -webkit-animation: rotate-scale-up-hor 0.35s linear reverse forwards;
   animation: rotate-scale-up-hor 0.35s linear reverse forwards;
 }
@@ -175,7 +184,7 @@ body {
     -webkit-transform: scale(1) rotateX(-360deg);
     transform: scale(1) rotateX(-360deg);
   }
-}
+} */
 
 #frog.dead {
   background-color: red;
@@ -191,7 +200,7 @@ body {
   -webkit-filter: drop-shadow(50px 50px 50px #222222);
   filter: drop-shadow(-5px 5px 4px #222222);
 }
-
+ 
 .familiar {
   bottom: 10px;
   background-image: url(../assets/cars/right/white_hatchback.png);
