@@ -4,7 +4,7 @@
 let posL = 0;
 let posR = 0;
 
-let lives = 2;
+let lives = 3;
 
 // se crea una rana
 const frog = new Frog();
@@ -24,19 +24,33 @@ cars_lane[7] = [];
 function startGame() {
   const startGameBox = document.querySelector("#startWindow");
   startGameBox.classList.add("hideStartGame");
-
   frog.create(); //create a frog
+  startTimer();
   setInterval(function () {
+
     reachNest();
     if (detectCollision(frog)) {
       // squashedFrog.play()
-      if (lives === 0) {
+      if (lives === 1) {
         gameOver();
+        const addDeadFrogImg = document.querySelector("#lives_2");
+        addDeadFrogImg.classList.remove("lives_img");
+        addDeadFrogImg.setAttribute("class", "dead_lives");
       } else {
         lives--;
         frog.clear();
         frog.create();
       }
+    }
+    if (lives === 2) {
+      const addDeadFrogImg = document.querySelector("#lives_0");
+      addDeadFrogImg.classList.remove("lives_img");
+      addDeadFrogImg.setAttribute("class", "dead_lives");
+    }
+    if (lives === 1) {
+      const addDeadFrogImg = document.querySelector("#lives_1");
+      addDeadFrogImg.classList.remove("lives_img");
+      addDeadFrogImg.setAttribute("class", "dead_lives");
     }
     carLoop();
   }, 50);

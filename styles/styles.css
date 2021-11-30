@@ -1,21 +1,22 @@
 body {
   margin: 0px auto;
-  background: #7db9e8;
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    #7db9e8 0%,
-    #21374b 100%
-  );
-  background: webkit-radial-gradient(
-    center,
-    ellipse cover,
-    #7db9e8 0%,
-    #21374b 100%
-  );
-  background: radial-gradient(ellipse at center, #7db9e8 0%, #21374b 100%);
-  background-size: cover;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
+/* @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
 
 #game-board {
   position: relative;
@@ -25,6 +26,167 @@ body {
   background-color: rgba(0, 0, 0, 0.226);
 }
 
+#decorationFrog {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  left: 65px;
+  background-image: url(../assets/decoration/sdeFrog.png);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  z-index: 50;
+  -webkit-filter: drop-shadow(2px 2px 2px #222222);
+  filter: drop-shadow(-5px 5px 5px #222222);
+}
+
+#moveExplain {
+  position: absolute;
+  left: 10px;
+  top: 300px;
+  width: 180px;
+  height: 215px;
+  background-color: #0000002d;
+  border-radius: 10px;
+  background-image: url(../assets/decoration/keyboardMovement.png);
+  background-size: 120px 80px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-filter: drop-shadow(2px 2px 2px #222222);
+  filter: drop-shadow(-5px 5px 5px #222222);
+}
+
+#moveExplain > p {
+  color: white;
+  font-family: "Corben";
+  text-align: center;
+}
+
+#lives > span {
+  color: white;
+  font-family: "Corben";
+  text-align: center;
+
+  position: absolute;
+  right: 50px;
+  top: 5px;
+  width: 100px;
+  height: 205px;
+  background-color: #0000002d;
+  border-radius: 10px;
+
+  -webkit-filter: drop-shadow(2px 2px 2px #222222);
+  filter: drop-shadow(-5px 5px 5px #222222);
+}
+
+/* TIMER */
+
+#timer {
+  color: white;
+  font-family: "Corben";
+  text-align: center;
+
+  position: absolute;
+  right: 10px;
+  top: 300px;
+  width: 180px;
+  height: 215px;
+  background-color: #0000002d;
+  border-radius: 10px;
+
+  -webkit-filter: drop-shadow(2px 2px 2px #222222);
+  filter: drop-shadow(-5px 5px 5px #222222);
+}
+
+.base-timer {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+/* TIMER */
+
+#lives_0 {
+  position: absolute;
+  right: 60px;
+  top: 20px;
+  z-index: 50;
+}
+
+#lives_1 {
+  position: absolute;
+  right: 60px;
+  top: 80px;
+  z-index: 50;
+}
+
+#lives_2 {
+  position: absolute;
+  right: 60px;
+  top: 140px;
+  z-index: 50;
+}
+
+.lives_img {
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/frogs/frog-head.png);
+  background-size: 80px 80px;
+}
+
+.dead_lives {
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/frogs/frog-head-dead.png);
+  background-size: 80px 80px;
+}
+
 #game-zone {
   position: absolute;
   margin: 0 200px;
@@ -32,6 +194,7 @@ body {
   height: 600px;
   background-color: blanchedalmond; /* se deja por ahora por si se ve ese color algo no va */
   overflow: hidden;
+  z-index: 1;
 }
 
 /* this will make the grayscale background when frog dies*/
@@ -45,59 +208,43 @@ body {
   background-image: url(../assets/decoration/cartoon_water.png);
   background-size: 30%;
   border-bottom: 2px white solid;
-  filter: saturate(190%);
+  /* filter: saturate(190%); */
 }
 
 /* Nest  */
 
 #goal > div {
+  position: relative;
   height: 45px;
   width: 45px;
-  margin-top: 2px;
+  margin-top: 6px;
   display: inline-block;
   /* background-image: url(../assets/decoration/nest02.png);
   background-size: 45px 45px; */
+  border-radius: 50% / 100% 100% 0 0;
+  border: 1px solid transparent;
+  background-color: #70ba0f;
   z-index: 1;
 }
 
 #nest0 {
-  position: relative;
   left: 144px;
-  border: 1px solid transparent;
-  background-color: #0064008c;
-  border-radius:50px
 }
 
 #nest1 {
-  position: relative;
   left: 203px;
-  border: 1px solid transparent;
-  background-color: #0064008c;
-  border-radius:50px
 }
 
 #nest2 {
-  position: relative;
   left: 262px;
-  border: 1px solid transparent;
-  background-color: #0064008c;
-  border-radius:50px
 }
 
 #nest3 {
-  position: relative;
   left: 321px;
-  border: 1px solid transparent;
-  background-color: #0064008c;
-  border-radius:50px
 }
 
 #nest4 {
-  position: relative;
   left: 380px;
-  border: 1px solid transparent;
-  background-color: #0064008c;
-  border-radius:50px
 }
 
 .frog {
@@ -106,7 +253,36 @@ body {
   background-image: url(../assets/frogs/frog-head.png);
   background-size: 45px 45px;
   z-index: 10;
+  animation: wobble-hor-bottom 0.8s both;
 }
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+ @keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
 
 /* Nest  */
 
@@ -134,7 +310,7 @@ body {
   width: 100%;
   height: 53px;
   background-image: url(../assets/decoration/grass.jpg);
-  background-size: 30%;
+  background-size: 25%;
   border-bottom: 2px white solid;
   border-top: 2px white solid;
 }
@@ -144,7 +320,7 @@ body {
   width: 100%;
   height: 53px;
   background-image: url(../assets/decoration/aceraTexture03.webp);
-  background-size: 15%;
+  background-size: 10%;
   border-top: 2px white solid;
 }
 
@@ -209,11 +385,11 @@ body {
   height: 30px;
   background-size: 60px 30px;
   background-repeat: no-repeat;
-  z-index: 1;
+  z-index: 2;
   -webkit-filter: drop-shadow(50px 50px 50px #000000);
   filter: drop-shadow(-5px 5px 3px #000000);
 }
- 
+
 .familiar {
   bottom: 10px;
   background-image: url(../assets/cars/right/white_hatchback.png);
@@ -290,13 +466,12 @@ body {
 
 #trunkR {
   /* background-color: red; */
-  background-image: url(../assets/decoration/sidetrunkR.png);
-  background-size: 100% 910px;
-  transform: rotate(15deg);
+  background-image: url(../assets/decoration/trunksR.png);
+  background-size: 100% 810px;
   position: absolute;
   left: -59px;
-  top: -190px;
-  width: 40%;
+  top: -120px;
+  width: 15%;
   height: 810px;
   z-index: 100;
 
@@ -304,13 +479,12 @@ body {
   filter: drop-shadow(10px 5px 5px #222222);
 }
 #trunkL {
-  background-image: url(../assets/decoration/sidetrunkL.png);
+  background-image: url(../assets/decoration/trunksL.png);
   background-size: 100% 810px;
-  transform: rotate(17deg);
   position: absolute;
   right: -90px;
-  top: -100px;
-  width: 50%;
+  top: -80px;
+  width: 20%;
   height: 810px;
   z-index: 100;
 
@@ -657,6 +831,38 @@ body {
   /* change game over background  */
   background-size: 100%;
   background-position: center center;
+
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 
 #startWindow.hideStartGame {
@@ -766,7 +972,7 @@ body {
   background-image: url(../assets/decoration/paw_button.png);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size:100%;
+  background-size: 100%;
   margin-right: 15px;
   float: left;
 
