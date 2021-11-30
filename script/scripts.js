@@ -1,6 +1,7 @@
 // SOUNDS
-// var frogMovementSound = new Audio("../sfx/jumpSound/jump.flac");
-//var squashedFrog = new Audio('../sfx/squased.wav')
+var introMusic = new Audio("../sfx/startSound/introMusic.mp3");
+var frogMovementSound = new Audio("../sfx/jumpSound/jump.flac");
+// var squashedFrog = new Audio('../sfx/squased.wav')
 // SOUNDS
 let posL = 0; // initial position of cars
 let posR = 0; // initial position of cars
@@ -24,6 +25,8 @@ cars_lane[7] = [];
 const frog = new Frog(); // create a new instance of frog
 
 function startGame() {
+  introMusic.play();
+
   // this will start the magic
   side1.classList.remove("hide");
   side2.classList.remove("hide");
@@ -70,37 +73,40 @@ const moveOnceKeyPressed = document.querySelector("#start");
 window.addEventListener("keydown", function (event) {
   if (event.code === "ArrowUp") {
     if (frog.squashed === false) {
-      // frogMovementSound.pause();
-      // frogMovementSound.currentTime = 0;
-      // frogMovementSound.play();
+      frogMovementSound.pause();
+      frogMovementSound.currentTime = 0;
+      frogMovementSound.play();
+      frogMovementSound.volume = 0.2;
       frog.moveUp();
-      // this.frog.setAttribute("class", "up");
     }
   }
 
   if (event.code === "ArrowDown") {
     if (frog.squashed === false) {
-      // frogMovementSound.pause();
-      // frogMovementSound.currentTime = 0;
-      // frogMovementSound.play();
+      frogMovementSound.pause();
+      frogMovementSound.currentTime = 0;
+      frogMovementSound.play();
+      frogMovementSound.volume = 0.2;
       frog.moveDown();
     }
   }
 
   if (event.code === "ArrowLeft") {
     if (frog.squashed === false) {
-      // frogMovementSound.pause();
-      // frogMovementSound.currentTime = 0;
-      // frogMovementSound.play();
+      frogMovementSound.pause();
+      frogMovementSound.currentTime = 0;
+      frogMovementSound.play();
+      frogMovementSound.volume = 0.2;
       frog.moveLeft();
     }
   }
 
   if (event.code === "ArrowRight") {
     if (frog.squashed === false) {
-      // frogMovementSound.pause();
-      // frogMovementSound.currentTime = 0;
-      // frogMovementSound.play();
+      frogMovementSound.pause();
+      frogMovementSound.currentTime = 0;
+      frogMovementSound.play();
+      frogMovementSound.volume = 0.2;
       frog.moveRight();
     }
   }
