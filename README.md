@@ -19,5 +19,5 @@ _We are used HTML, css and vanilla JavaScript wihout any framework_
 _You can go to the [Github page](https://thing-bits.github.io/proyecto1-frogger) Or clone the repository localy and open index.html_
 
 ## Credit
-_This games are made together with @github/thing-bits @github/SirAllap and @github/adservador_
+_This games are made together with @thing-bits @SirAllap and @adservador_
 _Graphic are from [Freepik](https://www.freepik.com/), [freeiconspng](https://www.freeiconspng.com/) [pngwing](https://www.pngwing.com)_ `Thank to the respective autors`
