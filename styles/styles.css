@@ -27,6 +27,10 @@ body {
   filter: drop-shadow(-5px 5px 5px #222222);
 }
 
+.hide { 
+  display: none;
+}
+
 #moveExplain {
   position: absolute;
   left: 10px;
@@ -47,6 +51,10 @@ body {
   color: white;
   font-family: "Corben";
   text-align: center;
+}
+
+#lives {
+  
 }
 
 #lives > span {
@@ -447,8 +455,8 @@ body {
   z-index: 10;
   position: absolute;
   width: 375px;
-  height: 470px;
-  top: 25%;
+  height: 570px;
+  top: 12%;
   left: 35%;
   border-radius: 30px;
   background-image: url(../assets/decoration/timesUp01.png);
@@ -472,8 +480,8 @@ body {
   z-index: 10;
   position: absolute;
   width: 375px;
-  height: 470px;
-  top: 25%;
+  height: 570px;
+  top: 11%;
   left: 35%;
   border-radius: 30px;
   background-image: url(../assets/decoration/youLose01.png);
@@ -557,7 +565,7 @@ body {
 
 .gameover p {
   position: relative;
-  bottom: 90px;
+  bottom: 60px;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 80px;
@@ -578,7 +586,7 @@ body {
 
 .opcionesLose {
   position: relative;
-  top: 200px;
+  top: 300px;
   width: 275px;
   height: auto;
   padding-top: 25px;
@@ -657,6 +665,7 @@ body {
 }
 /*__________________GAME OVER________________*/
 
+
 /*__________________Start Window________________*/
 #startWindow {
   z-index: 10;
@@ -670,7 +679,7 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center center;
-  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 2.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 /**
  * ----------------------------------------
@@ -691,7 +700,7 @@ body {
 }
 
 #startWindow.hideStartGame {
-  animation: rotate-out-center 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: rotate-out-center 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 /**

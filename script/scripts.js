@@ -1,16 +1,20 @@
+// SOUNDS
 // var frogMovementSound = new Audio("../sfx/jumpSound/jump.flac");
 //var squashedFrog = new Audio('../sfx/squased.wav')
+// SOUNDS
+let posL = 0; // initial position of cars
+let posR = 0; // initial position of cars
+let lives = 3; // number of lives
 
-let posL = 0;
-let posR = 0;
 
-let lives = 3;
+const startGameBox = document.querySelector("#startWindow"); // point the selector for Start Game window
+const side1 = document.querySelector("#lives");
+const side2 = document.querySelector("#timer");
+const side3 = document.querySelector("#moveExplain");
 
-// se crea una rana
-const frog = new Frog();
 
-// se crea un vehículo
-const cars_lane = [];
+
+const cars_lane = []; // array for every lanes/roads in where the cars going to be storage
 cars_lane[0] = [];
 cars_lane[1] = [];
 cars_lane[2] = [];
@@ -20,37 +24,43 @@ cars_lane[5] = [];
 cars_lane[6] = [];
 cars_lane[7] = [];
 
-// Se crea la función del juego
-function startGame() {
-  const startGameBox = document.querySelector("#startWindow");
-  startGameBox.classList.add("hideStartGame");
-  frog.create(); //create a frog
-  startTimer();
+const frog = new Frog(); // create a new instance of frog
+
+function startGame() { // this will start the magic
+  side1.classList.remove("hide")
+  side2.classList.remove("hide")
+  side3.classList.remove("hide")
+  
+  startGameBox.classList.add("hideStartGame"); // this will hide the Start Game window
+
+  frog.create(); // this will create a frog
+  startTimer(); // this will start timer function
+
   setInterval(function () {
-    reachNest();
+    reachNest(); 
     if (detectCollision(frog)) {
       // squashedFrog.play()
       if (lives === 1) {
-        gameOver();
-        const addDeadFrogImg = document.querySelector("#lives_2");
-        addDeadFrogImg.classList.remove("lives_img");
-        addDeadFrogImg.setAttribute("class", "dead_lives");
-        clearInterval(timerInterval);
+        gameOver(); // every interval check if lose
+        const addDeadFrogImg2 = document.querySelector("#lives_2"); // point the selector to dead frog img
+        addDeadFrogImg2.classList.remove("lives_img");
+        addDeadFrogImg2.setAttribute("class", "dead_lives");
+        clearInterval(timerInterval); // stop the timer if lose the game
       } else {
         lives--;
-        frog.clear();
-        frog.create();
+        frog.clear(); // clean a dead frog from the map
+        frog.create(); // create a new frog at the beggining
       }
     }
     if (lives === 2) {
-      const addDeadFrogImg = document.querySelector("#lives_0");
-      addDeadFrogImg.classList.remove("lives_img");
-      addDeadFrogImg.setAttribute("class", "dead_lives");
+      const addDeadFrogImg0 = document.querySelector("#lives_0");
+      addDeadFrogImg0.classList.remove("lives_img");
+      addDeadFrogImg0.setAttribute("class", "dead_lives");
     }
     if (lives === 1) {
-      const addDeadFrogImg = document.querySelector("#lives_1");
-      addDeadFrogImg.classList.remove("lives_img");
-      addDeadFrogImg.setAttribute("class", "dead_lives");
+      const addDeadFrogImg1 = document.querySelector("#lives_1");
+      addDeadFrogImg1.classList.remove("lives_img");
+      addDeadFrogImg1.setAttribute("class", "dead_lives");
     }
     carLoop();
   }, 50);
@@ -218,7 +228,3 @@ function winGame() {
     //carSpeed = carSpeed.map(speed => speed++)
   }
 }
-
-//set canvas limits
-//lives counter
-//

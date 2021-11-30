@@ -23,7 +23,7 @@ function Vehicle(pos, road) {
           case "road-2":
             this.car.setAttribute("class", "mercedes" + " vehicle");
             this.car.style.left = this.pos.left + "px";
-            this.pos.left += 8;
+            this.pos.left += 7;
             break;
           case "road-4":
             this.car.setAttribute("class", "police" + " vehicle");

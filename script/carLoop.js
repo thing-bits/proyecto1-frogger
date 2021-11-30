@@ -22,10 +22,10 @@ function carLoop() {
     }
   }
   for (let l = 1; l < cars_lane.length; l+=2) {
-    while (cars_lane[l].length < 3) {
+    while (cars_lane[l].length < 2) {
       //create a new car if array empty
       cars_lane[l].push(new Vehicle(posR, `road-${l}`));
-      posR -= 300; // distance between cars
+      posR -= 400; // distance between cars
     }
     posR = 0;
 
