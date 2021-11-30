@@ -27,7 +27,6 @@ function startGame() {
   frog.create(); //create a frog
   startTimer();
   setInterval(function () {
-
     reachNest();
     if (detectCollision(frog)) {
       // squashedFrog.play()
@@ -36,6 +35,7 @@ function startGame() {
         const addDeadFrogImg = document.querySelector("#lives_2");
         addDeadFrogImg.classList.remove("lives_img");
         addDeadFrogImg.setAttribute("class", "dead_lives");
+        clearInterval(timerInterval);
       } else {
         lives--;
         frog.clear();
@@ -131,10 +131,22 @@ function gameOver() {
   grayScaleGZ.classList.add("filter");
 }
 
+function gameOver4Time() {
+  const gameOverBox = document.querySelector("#losWindowTime");
+  gameOverBox.classList.remove("showGameOver");
+  gameOverBox.classList.add("heartbeat");
+
+  //focus the yes button when lose
+  document.querySelector("#autoFocus").focus();
+
+  const grayScaleGZ = document.querySelector("#game-zone");
+  grayScaleGZ.classList.add("filter");
+}
+
 const reachedNest = [false, false, false, false, false];
 
 function reachNest() {
-  if (frog.pos.top <= -540 && frog.pos.left >= 142 && frog.pos.left <= 187) {
+  if (frog.pos.top <= -540 && frog.pos.left >= 140 && frog.pos.left <= 187) {
     if (reachedNest[0] === false) {
       reachedNest[0] = true;
       const addFrogImg = document.querySelector("#nest0");
@@ -166,7 +178,7 @@ function reachNest() {
     }
   } else if (
     frog.pos.top <= -540 &&
-    frog.pos.left >= 475 &&
+    frog.pos.left >= 375 &&
     frog.pos.left <= 520
   ) {
     if (reachedNest[3] === false) {
@@ -195,7 +207,11 @@ function winGame() {
       return e;
     }).length === 5
   ) {
-    console.log("youWin");
+    const winGame = document.querySelector("#winWindow");
+    winGame.classList.remove("showWinGame");
+    winGame.classList.add("heartbeat");
+    frog.clear();
+    clearInterval(timerInterval);
   } else {
     frog.clear();
     frog.create();

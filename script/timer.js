@@ -53,9 +53,7 @@ document.getElementById("app").innerHTML = `
 
 function onTimesUp() {
   clearInterval(timerInterval);
-  // alert('timesUp!')
-  frog.clear();
-  frog.create();
+  gameOver4Time()
 }
 
 function startTimer() {
