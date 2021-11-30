@@ -6,12 +6,10 @@ let posL = 0; // initial position of cars
 let posR = 0; // initial position of cars
 let lives = 3; // number of lives
 
-
 const startGameBox = document.querySelector("#startWindow"); // point the selector for Start Game window
 const side1 = document.querySelector("#lives");
 const side2 = document.querySelector("#timer");
 const side3 = document.querySelector("#moveExplain");
-
 
 const cars_lane = []; // array for every lanes/roads in where the cars going to be storage
 cars_lane[0] = [];
@@ -25,18 +23,19 @@ cars_lane[7] = [];
 
 const frog = new Frog(); // create a new instance of frog
 
-function startGame() { // this will start the magic
-  side1.classList.remove("hide")
-  side2.classList.remove("hide")
-  side3.classList.remove("hide")
-  
+function startGame() {
+  // this will start the magic
+  side1.classList.remove("hide");
+  side2.classList.remove("hide");
+  side3.classList.remove("hide");
+
   startGameBox.classList.add("hideStartGame"); // this will hide the Start Game window
 
   frog.create(); // this will create a frog
   startTimer(); // this will start timer function
 
   setInterval(function () {
-    reachNest(); 
+    reachNest();
     if (detectCollision(frog)) {
       // squashedFrog.play()
       if (lives === 1) {
@@ -44,7 +43,7 @@ function startGame() { // this will start the magic
         const addDeadFrogImg2 = document.querySelector("#lives_2"); // point the selector to dead frog img
         addDeadFrogImg2.classList.remove("lives_img");
         addDeadFrogImg2.setAttribute("class", "dead_lives");
-        clearInterval(timerInterval); // stop the timer if lose the game
+        clearInterval(timerInterval); // stop the timer if loose the game
       } else {
         lives--;
         frog.clear(); // clean a dead frog from the map
@@ -61,14 +60,13 @@ function startGame() { // this will start the magic
       addDeadFrogImg1.classList.remove("lives_img");
       addDeadFrogImg1.setAttribute("class", "dead_lives");
     }
-    carLoop();
+    carLoop(); // It starts the car loop
   }, 50);
 }
 
 const moveOnceKeyPressed = document.querySelector("#start");
 
 // frog movement
-
 window.addEventListener("keydown", function (event) {
   if (event.code === "ArrowUp") {
     if (frog.squashed === false) {
@@ -108,13 +106,13 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
+// check for collapsed function
 function detectCollision(frog) {
-  // check for collapsed function
   let cars = document.querySelectorAll(".vehicle");
   let frogDimension = frog.frog.getBoundingClientRect();
-
   for (let i = 0; i < cars.length; i++) {
     let carDimension = cars[i].getBoundingClientRect();
+    // it checks if the dimension of a car collides with the frog
     if (
       frogDimension.left < carDimension.left + carDimension.width &&
       frogDimension.left + frogDimension.width > carDimension.left &&
@@ -141,6 +139,7 @@ function gameOver() {
 }
 
 function gameOver4Time() {
+  // it shows the time is up window
   const gameOverBox = document.querySelector("#losWindowTime");
   gameOverBox.classList.remove("showGameOver");
   gameOverBox.classList.add("heartbeat");
@@ -152,6 +151,7 @@ function gameOver4Time() {
   grayScaleGZ.classList.add("filter");
 }
 
+// this storages the frog when it reaches the nest
 const reachedNest = [false, false, false, false, false];
 
 function reachNest() {
@@ -162,7 +162,6 @@ function reachNest() {
       addFrogImg.setAttribute("class", "frog");
       winGame();
     }
-    //reset frog
   } else if (
     frog.pos.top <= -540 &&
     frog.pos.left >= 255 &&
@@ -209,7 +208,7 @@ function reachNest() {
     }
   }
 }
-
+// it checks if the nests have been reached
 function winGame() {
   if (
     reachedNest.filter(function (e) {

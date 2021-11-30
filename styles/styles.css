@@ -1,8 +1,8 @@
 body {
   margin: 0px auto;
   background: linear-gradient(-5deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 200% 200%;
-	animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
 }
 
 #game-board {
@@ -14,201 +14,88 @@ body {
   border-radius: 20px;
 }
 
-#decorationFrog {
-  position: absolute;
-  width: 200px;
-  height: 250px;
-  left: 65px;
-  background-image: url(../assets/decoration/sdeFrog.png);
-  background-size: 200px;
-  background-repeat: no-repeat;
-  z-index: 50;
-  -webkit-filter: drop-shadow(2px 2px 2px #222222);
-  filter: drop-shadow(-5px 5px 5px #222222);
-}
-
-.hide { 
-  display: none;
-}
-
-#moveExplain {
-  position: absolute;
-  left: 10px;
-  top: 300px;
-  width: 180px;
-  height: 215px;
-  background-color: #0000002d;
-  border-radius: 10px;
-  background-image: url(../assets/decoration/keyboardMovement.png);
-  background-size: 120px 80px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-filter: drop-shadow(2px 2px 2px #222222);
-  filter: drop-shadow(-5px 5px 5px #222222);
-}
-
-#moveExplain > p {
-  color: white;
-  font-family: "Corben";
-  text-align: center;
-}
-
-#lives {
-  
-}
-
-#lives > span {
-  color: white;
-  font-family: "Corben";
-  text-align: center;
-
-  position: absolute;
-  right: 50px;
-  top: 5px;
-  width: 100px;
-  height: 205px;
-  background-color: #0000002d;
-  border-radius: 10px;
-
-  -webkit-filter: drop-shadow(2px 2px 2px #222222);
-  filter: drop-shadow(-5px 5px 5px #222222);
-}
-
-/* TIMER */
-
-#timer {
-  color: white;
-  font-family: "Corben";
-  text-align: center;
-
-  position: absolute;
-  right: 10px;
-  top: 300px;
-  width: 180px;
-  height: 215px;
-  background-color: #0000002d;
-  border-radius: 10px;
-
-  -webkit-filter: drop-shadow(2px 2px 2px #222222);
-  filter: drop-shadow(-5px 5px 5px #222222);
-}
-
-.base-timer {
-  position: relative;
-  width: 180px;
-  height: 180px;
-}
-
-.base-timer__svg {
-  transform: scaleX(-1);
-}
-
-.base-timer__circle {
-  fill: none;
-  stroke: none;
-}
-
-.base-timer__path-elapsed {
-  stroke-width: 7px;
-  stroke: grey;
-}
-
-.base-timer__path-remaining {
-  stroke-width: 7px;
-  stroke-linecap: round;
-  transform: rotate(90deg);
-  transform-origin: center;
-  transition: 1s linear all;
-  fill-rule: nonzero;
-  stroke: currentColor;
-}
-
-.base-timer__path-remaining.green {
-  color: rgb(65, 184, 131);
-}
-
-.base-timer__path-remaining.orange {
-  color: orange;
-}
-
-.base-timer__path-remaining.red {
-  color: red;
-}
-
-.base-timer__label {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-}
-
-/* TIMER */
-
-#lives_0 {
-  position: absolute;
-  right: 60px;
-  top: 20px;
-  z-index: 50;
-}
-
-#lives_1 {
-  position: absolute;
-  right: 60px;
-  top: 80px;
-  z-index: 50;
-}
-
-#lives_2 {
-  position: absolute;
-  right: 60px;
-  top: 140px;
-  z-index: 50;
-}
-
-.lives_img {
-  width: 80px;
-  height: 80px;
-  background-image: url(../assets/frogs/frog-head.png);
-  background-size: 80px 80px;
-}
-
-.dead_lives {
-  width: 80px;
-  height: 80px;
-  background-image: url(../assets/frogs/frog-head-dead.png);
-  background-size: 80px 80px;
-}
-
 #game-zone {
   position: absolute;
   margin: 0 200px;
   width: 800px;
   height: 600px;
-  background-color: blanchedalmond; /* se deja por ahora por si se ve ese color algo no va */
   overflow: hidden;
   z-index: 1;
 }
 
 /* this will make the grayscale background when frog dies*/
 #game-zone.filter {
-  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
-/* lanes */
+
+/* Frog */
+#frog {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-image: url(../assets/frogs/frog_01_up.png);
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left: 370px;
+  top: 7px;
+  z-index: 0;
+  transition: all 0.1s ease;
+  -webkit-filter: drop-shadow(2px 2px 2px #222222);
+  filter: drop-shadow(-2px 2px 3px #222222);
+}
+/* Frog */
+
+/* Lanes */
 #goal {
   width: 100%;
   height: 53px;
   background-image: url(../assets/decoration/cartoon_water.png);
   background-size: 30%;
   border-bottom: 2px white solid;
-  /* filter: saturate(190%); */
 }
 
-/* Nest  */
+.road {
+  position: relative;
+  width: 100%;
+  height: 53px;
+  background-color: gray;
+  background-image: url(../assets/decoration/paviment.jpeg);
+  background-size: 30%;
+  border-bottom: 2px white dashed;
+  filter: brightness(150%);
+}
 
+#road-4 {
+  border-bottom: unset;
+}
+
+#road-0 {
+  border-bottom: unset;
+}
+
+#rest-zone {
+  position: relative;
+  width: 100%;
+  height: 53px;
+  background-image: url(../assets/decoration/grass.jpg);
+  background-size: 45%;
+  border-bottom: 2px white solid;
+  border-top: 2px white solid;
+}
+
+#start {
+  position: relative;
+  width: 100%;
+  height: 53px;
+  background-image: url(../assets/decoration/aceraTexture03.webp);
+  background-size: 20%;
+  border-top: 2px white solid;
+}
+/* Lanes */
+
+
+/* Nest  */
 #goal > div {
   position: relative;
   height: 45px;
@@ -252,7 +139,7 @@ body {
  * animation wobble-hor-bottom
  * ----------------------------------------
  */
- @keyframes wobble-hor-bottom {
+@keyframes wobble-hor-bottom {
   0%,
   100% {
     transform: translateX(0%);
@@ -274,663 +161,4 @@ body {
     transform: translateX(-6px) rotate(-1.2deg);
   }
 }
-
-
 /* Nest  */
-
-.road {
-  position: relative;
-  width: 100%;
-  height: 53px;
-  background-color: gray;
-  background-image: url(../assets/decoration/paviment.jpeg);
-  background-size: 30%;
-  border-bottom: 2px white dashed;
-  filter: brightness(150%);
-}
-
-#road-4 {
-  border-bottom: unset;
-}
-
-#road-0 {
-  border-bottom: unset;
-}
-
-#rest-zone {
-  position: relative;
-  width: 100%;
-  height: 53px;
-  background-image: url(../assets/decoration/grass.jpg);
-  background-size: 45%;
-  border-bottom: 2px white solid;
-  border-top: 2px white solid;
-}
-
-#start {
-  position: relative;
-  width: 100%;
-  height: 53px;
-  background-image: url(../assets/decoration/aceraTexture03.webp);
-  background-size: 20%;
-  border-top: 2px white solid;
-}
-
-/* lanes */
-#frog {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  background-image: url(../assets/frogs/frog_01_up.png);
-  background-size: 35px 35px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  left: 370px;
-  top: 7px;
-  z-index: 0;
-  transition: all 0.1s ease;
-  -webkit-filter: drop-shadow(2px 2px 2px #222222);
-  filter: drop-shadow(-2px 2px 3px #222222);
-}
-
-#frog.dead {
-  background-color: red;
-}
-
-.vehicle {
-  position: absolute;
-  width: 60px;
-  height: 30px;
-  background-size: 60px 30px;
-  background-repeat: no-repeat;
-  z-index: 2;
-  -webkit-filter: drop-shadow(50px 50px 50px #000000);
-  filter: drop-shadow(-5px 5px 3px #000000);
-}
-
-.familiar {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/white_hatchback.png);
-}
-.familiar_left {
-  bottom: 10px;
-  background-image: url(../assets/cars/left/white_hatchback.png);
-}
-
-.mercedes {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/mercedes-car-go-right.png);
-  filter: brightness(140%);
-}
-
-.sedan {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/yellow_sedan.png);
-}
-.sedan_left {
-  bottom: 10px;
-  background-image: url(../assets/cars/left/yellow_sedan.png);
-}
-
-.bigTruck {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/white-blue_load_bigtruck.png);
-  /* size */
-  width: 120px;
-  height: 30px;
-  background-size: 120px 30px;
-}
-
-.smallTruck {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/red_empty_bigtruck.png);
-
-  width: 80px;
-  height: 30px;
-  background-size: 80px 30px;
-}
-.smallTruck_left {
-  bottom: 10px;
-  background-image: url(../assets/cars/left/red_empty_bigtruck.png);
-
-  width: 80px;
-  height: 30px;
-  background-size: 80px 30px;
-}
-
-.police {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/police-car-go-right.png);
-}
-
-.orangeCar {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/orange-car-go-right.png);
-
-  width: 60px;
-  height: 30px;
-  background-size: 60px 30px;
-}
-
-.redCar {
-  bottom: 10px;
-  background-image: url(../assets/cars/right/red-car-go-right.png);
-}
-
-.redCar_left {
-  bottom: 10px;
-  background-image: url(../assets/cars/left/red-car-go-left.png);
-}
-
-#trunkR {
-  background-image: url(../assets/decoration/trunksR.png);
-  background-size: 100% 810px;
-  position: absolute;
-  left: -59px;
-  top: -120px;
-  width: 15%;
-  height: 810px;
-  z-index: 100;
-
-  -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(10px 5px 5px #222222);
-}
-#trunkL {
-  background-image: url(../assets/decoration/trunksL.png);
-  background-size: 100% 810px;
-  position: absolute;
-  right: -90px;
-  top: -80px;
-  width: 20%;
-  height: 810px;
-  z-index: 100;
-
-  -webkit-filter: drop-shadow(50px 50px 50px #222222);
-  filter: drop-shadow(-10px -5px 5px #222222);
-}
-
-/*__________________GAME OVER________________*/
-#losWindowTime {
-  z-index: 10;
-  position: absolute;
-  width: 375px;
-  height: 570px;
-  top: 12%;
-  left: 35%;
-  border-radius: 30px;
-  background-image: url(../assets/decoration/timesUp01.png);
-  /* change game over background  */
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  filter: brightness(130%);
-}
-
-#losWindowTime.showGameOver {
-  display: none;
-}
-
-#losWindowTime.heartbeat {
-  -webkit-animation: bounce-in-top 1.1s both;
-  animation: bounce-in-top 1.1s both;
-}
-
-#losWindow {
-  z-index: 10;
-  position: absolute;
-  width: 375px;
-  height: 570px;
-  top: 11%;
-  left: 35%;
-  border-radius: 30px;
-  background-image: url(../assets/decoration/youLose01.png);
-  /* change game over background  */
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  filter: brightness(130%);
-}
-
-#losWindow.showGameOver {
-  display: none;
-}
-
-#losWindow.heartbeat {
-  animation: bounce-in-top 1.1s both;
-}
-/*
- * ----------------------------------------
- * animation bounce-in-top
- * ----------------------------------------
- */
-@keyframes bounce-in-top {
-  0% {
-    -webkit-transform: translateY(-500px);
-    transform: translateY(-500px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: translateY(-65px);
-    transform: translateY(-65px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: translateY(-28px);
-    transform: translateY(-28px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  90% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-}
-
-.gameover {
-  width: 375px;
-  height: auto;
-  background: none;
-}
-
-.gameover p {
-  position: relative;
-  bottom: 60px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 80px;
-  font-family: "Black Ops One", cursive;
-  line-height: 60px;
-  text-align: center;
-  text-shadow: 5px 5px #00000070;
-  color: #ffffff;
-}
-
-.continueLose {
-  width: 375px;
-  height: auto;
-  padding-top: 20px;
-}
-
-/*  */
-
-.opcionesLose {
-  position: relative;
-  top: 300px;
-  width: 275px;
-  height: auto;
-  padding-top: 25px;
-  margin: auto;
-}
-
-.yesLose a {
-  text-align: center;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: corbel;
-  color: #ffffff;
-  text-decoration: none;
-  text-shadow: 2.5px 2.5px #000000;
-  padding: 12.5px 50px 12.5px 50px;
-  border-radius: 10px;
-  background: #0303039d;
-  margin-right: 15px;
-  float: left;
-  margin-left: 50px;
-
-  animation-name: animaciones2;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes animaciones2 {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-
-.noLose a {
-  text-align: center;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: corbel;
-  color: #ffffff;
-  text-decoration: none;
-  text-shadow: 1.5px 1.5px #fb3733;
-  padding: 12.5px 50px 12.5px 50px;
-  border-radius: 10px;
-  background: #000000;
-  float: left;
-}
-
-@keyframes animaciones3 {
-  0% {
-    transform: translate(-5px, 0px);
-  }
-  25% {
-    transform: translate(-2.5px, 0px);
-  }
-  50% {
-    transform: translate(0px, 0px);
-  }
-  75% {
-    transform: translate(2.5px, 0px);
-  }
-  100% {
-    transform: translate(5px, 0px);
-  }
-}
-
-.noLose a:hover {
-  animation-name: animaciones3;
-  animation-duration: 0.15s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-/*__________________GAME OVER________________*/
-
-
-/*__________________Start Window________________*/
-#startWindow {
-  z-index: 10;
-  position: absolute;
-  width: 390px;
-  height: 270px;
-  top: 15%;
-  left: 33%;
-  border-radius: 30px;
-  background-image: url(../assets/decoration/official_frogger_logo.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center center;
-  animation: text-focus-in 2.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-}
-/**
- * ----------------------------------------
- * animation text-focus-in
- * ----------------------------------------
- */
-@keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-#startWindow.hideStartGame {
-  animation: rotate-out-center 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-}
-
-/**
- * ----------------------------------------
- * animation rotate-out-center
- * ----------------------------------------
- */
-@keyframes rotate-out-center {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-    opacity: 0;
-  }
-}
-/**
-* ----------------------------------------
-* animation rotate-out-center
-* ----------------------------------------
-*/
-
-.startGame {
-  width: 375px;
-  height: auto;
-  padding-top: 30px;
-  background: none;
-}
-
-.startGame p {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 55px;
-  font-family: "Corben", cursive;
-  line-height: 77px;
-  text-align: center;
-  text-shadow: 5px 5px #00000000;
-  color: #148e4500;
-}
-
-.startBut {
-  width: 275px;
-  height: auto;
-  padding-top: 25px;
-  margin: auto;
-}
-
-.yes a {
-  position: relative;
-  left: 20%;
-  text-align: center;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: corbel;
-  color: #ffda09;
-  text-decoration: none;
-  text-shadow: 2.5px 2.5px #000000;
-  padding: 90px;
-  border-radius: 10px;
-  background-image: url(../assets/decoration/paw_button.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100%;
-  margin-right: 15px;
-  float: left;
-  animation-name: animaciones2;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes animaciones2 {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-/*__________________Start Window________________*/
-
-
-/*__________________WIN GAME________________*/
-#winWindow {
-  z-index: 10;
-  position: absolute;
-  width: 375px;
-  height: 470px;
-  top: 16%;
-  left: 35%;
-  border-radius: 30px;
-  background-image: url(../assets/decoration/youWin.png);
-  /* change game over background  */
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  filter: brightness(130%);
-}
-
-#winWindow.showWinGame {
-  display: none;
-}
-
-#winWindow.heartbeat {
-  animation: bounce-in-top 1.1s both;
-}
-/*
- * ----------------------------------------
- * animation bounce-in-top
- * ----------------------------------------
- */
-@keyframes bounce-in-top {
-  0% {
-    -webkit-transform: translateY(-500px);
-    transform: translateY(-500px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: translateY(-65px);
-    transform: translateY(-65px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: translateY(-28px);
-    transform: translateY(-28px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  90% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-  }
-}
-
-.winGame {
-  width: 375px;
-  height: auto;
-  background: none;
-}
-
-.winGame p {
-  position: relative;
-  bottom: 90px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 80px;
-  font-family: "Black Ops One", cursive;
-  line-height: 60px;
-  text-align: center;
-  text-shadow: 5px 5px #00000070;
-  color: #ffffff;
-}
-
-.continueWingaame {
-  width: 375px;
-  height: auto;
-  padding-top: 20px;
-}
-
-/*  */
-
-.opcionesWin {
-  position: relative;
-  top: 180px;
-  width: 275px;
-  height: auto;
-  padding-top: 25px;
-  margin: auto;
-}
-
-.yesWin a {
-  text-align: center;
-  font-size: 15px;
-  font-weight: bold;
-  font-family: corbel;
-  color: #ffffff;
-  text-decoration: none;
-  text-shadow: 2.5px 2.5px #000000;
-  padding: 12.5px 50px 12.5px 50px;
-  border-radius: 10px;
-  background: #0303039d;
-  margin-right: 15px;
-  float: left;
-  margin-left: 50px;
-  animation-name: animaciones2;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@keyframes animaciones2 {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
-}
-/*__________________WIN GAME________________*/

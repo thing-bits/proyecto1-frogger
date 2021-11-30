@@ -1,0 +1,84 @@
+.vehicle {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background-size: 60px 30px;
+  background-repeat: no-repeat;
+  z-index: 2;
+  -webkit-filter: drop-shadow(50px 50px 50px #000000);
+  filter: drop-shadow(-5px 5px 3px #000000);
+}
+
+.familiar {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/white_hatchback.png);
+}
+.familiar_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/white_hatchback.png);
+}
+
+.mercedes {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/mercedes-car-go-right.png);
+  filter: brightness(140%);
+}
+
+.sedan {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/yellow_sedan.png);
+}
+.sedan_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/yellow_sedan.png);
+}
+
+.bigTruck {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/white-blue_load_bigtruck.png);
+  /* size */
+  width: 120px;
+  height: 30px;
+  background-size: 120px 30px;
+}
+
+.smallTruck {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/red_empty_bigtruck.png);
+
+  width: 80px;
+  height: 30px;
+  background-size: 80px 30px;
+}
+.smallTruck_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/red_empty_bigtruck.png);
+
+  width: 80px;
+  height: 30px;
+  background-size: 80px 30px;
+}
+
+.police {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/police-car-go-right.png);
+}
+
+.orangeCar {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/orange-car-go-right.png);
+
+  width: 60px;
+  height: 30px;
+  background-size: 60px 30px;
+}
+
+.redCar {
+  bottom: 10px;
+  background-image: url(../assets/cars/right/red-car-go-right.png);
+}
+
+.redCar_left {
+  bottom: 10px;
+  background-image: url(../assets/cars/left/red-car-go-left.png);
+}
