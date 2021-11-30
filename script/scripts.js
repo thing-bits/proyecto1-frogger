@@ -13,7 +13,6 @@ const side2 = document.querySelector("#timer");
 const side3 = document.querySelector("#moveExplain");
 
 
-
 const cars_lane = []; // array for every lanes/roads in where the cars going to be storage
 cars_lane[0] = [];
 cars_lane[1] = [];

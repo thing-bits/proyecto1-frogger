@@ -1,7 +1,7 @@
 body {
   margin: 0px auto;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
+  background: linear-gradient(-5deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 200% 200%;
 	animation: gradient 15s ease infinite;
 }
 
@@ -215,9 +215,9 @@ body {
   width: 45px;
   margin-top: 6px;
   display: inline-block;
-  border-radius: 50% / 100% 100% 0 0;
+  border-radius: 90% / 100% 100% 0 0;
   border: 1px solid transparent;
-  background-color: #70ba0f;
+  background-color: #0064008c;
   z-index: 1;
 }
 
@@ -423,7 +423,6 @@ body {
 }
 
 #trunkR {
-  /* background-color: red; */
   background-image: url(../assets/decoration/trunksR.png);
   background-size: 100% 810px;
   position: absolute;
