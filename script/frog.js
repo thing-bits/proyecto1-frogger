@@ -41,14 +41,14 @@ function Frog() {
 
   this.moveLeft = function () {
     if (this.pos.left > 40) {
-      this.pos.left -= 55;
+      this.pos.left -= 25.5;
       this.frog.style.left = `${this.pos.left}px`;
     }
   };
 
   this.moveRight = function () {
     if (this.pos.left < 700) {
-      this.pos.left += 55;
+      this.pos.left += 25.5;
       this.frog.style.left = `${this.pos.left}px`;
     }
   };
