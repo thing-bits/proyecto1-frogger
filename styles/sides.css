@@ -2,7 +2,7 @@
   position: absolute;
   width: 200px;
   height: 250px;
-  left: 65px;
+  left: 59px;
   background-image: url(../assets/decoration/sdeFrog.png);
   background-size: 200px;
   background-repeat: no-repeat;
@@ -60,7 +60,6 @@
   color: white;
   font-family: "Corben";
   text-align: center;
-
   position: absolute;
   right: 10px;
   top: 300px;
@@ -68,7 +67,6 @@
   height: 215px;
   background-color: #0000002d;
   border-radius: 10px;
-
   -webkit-filter: drop-shadow(2px 2px 2px #222222);
   filter: drop-shadow(-5px 5px 5px #222222);
 }

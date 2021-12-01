@@ -1,10 +1,10 @@
-function mute() {
-  introMusic.pause();
-}
 // SOUNDS
 var introMusic = new Audio("../sfx/startSound/introMusic.mp3");
 var frogMovementSound = new Audio("../sfx/jumpSound/jump.flac");
 // var squashedFrog = new Audio('../sfx/squased.wav')
+function mute() {
+  introMusic.pause();
+}
 // SOUNDS
 let posL = 0; // initial position of cars
 let posR = 0; // initial position of cars
