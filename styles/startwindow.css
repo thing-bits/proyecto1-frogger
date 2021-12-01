@@ -85,8 +85,8 @@
 .startBut p {
   color: white;
   position: absolute;
-  left: 170px;
-  bottom: -140px;
+  left: 67px;
+  bottom: 33px;
 }
 
 
@@ -99,7 +99,6 @@
   font-family: corbel;
   color: #ffda09;
   text-decoration: none;
-  text-shadow: 2.5px 2.5px #000000;
   padding: 90px;
   border-radius: 10px;
   background-image: url(../assets/decoration/paw_button.png);
