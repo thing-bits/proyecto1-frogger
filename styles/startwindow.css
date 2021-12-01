@@ -82,6 +82,14 @@
   margin: auto;
 }
 
+.startBut p {
+  color: white;
+  position: absolute;
+  left: 170px;
+  bottom: -140px;
+}
+
+
 .yes a {
   position: relative;
   left: 20%;

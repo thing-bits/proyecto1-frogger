@@ -1,3 +1,6 @@
+function mute() {
+  introMusic.pause();
+}
 // SOUNDS
 var introMusic = new Audio("../sfx/startSound/introMusic.mp3");
 var frogMovementSound = new Audio("../sfx/jumpSound/jump.flac");
